@@ -1,0 +1,404 @@
+kotlin version: 2.0.0
+error message: org.jetbrains.kotlin.backend.common.BackendException: Backend Internal error: Exception during IR lowering
+File being compiled: /home/mr.robot/AndroidStudioProjects/TakTak/common/composable/src/main/java/com/mck/composable/ContentSearchBar.kt
+The root cause java.lang.RuntimeException was thrown at: org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException(CodegenUtil.kt:253)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException$default(CodegenUtil.kt:236)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:65)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:52)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:38)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:29)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:16)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:62)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.invokeCodegen(JvmIrCodegenFactory.kt:371)
+	at org.jetbrains.kotlin.codegen.CodegenFactory.generateModule(CodegenFactory.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.generateModuleInFrontendIRMode(JvmIrCodegenFactory.kt:433)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.generateCodeFromIr(jvmCompilerPipeline.kt:241)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.compileModulesUsingFrontendIrAndLightTree(jvmCompilerPipeline.kt:140)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:155)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:50)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:104)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:48)
+	at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:101)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:453)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:62)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:506)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:423)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileNonIncrementally(IncrementalCompilerRunner.kt:301)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:129)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:676)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:92)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1661)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN name:ContentSearchBar-Kr38-dQ visibility:public modality:FINAL <> (onClickNav:kotlin.Function0<kotlin.Unit>, onClickSearch:kotlin.Function0<kotlin.Unit>, placeholder:kotlin.String, readOnly:kotlin.Boolean, marginHorizontal:androidx.compose.ui.unit.Dp, marginTop:androidx.compose.ui.unit.Dp) returnType:kotlin.Unit
+  annotations:
+    OptIn(markerClass = [CLASS_REFERENCE 'CLASS IR_EXTERNAL_DECLARATION_STUB ANNOTATION_CLASS name:ExperimentalMaterial3Api modality:OPEN visibility:public superTypes:[kotlin.Annotation]' type=kotlin.reflect.KClass<androidx.compose.material3.ExperimentalMaterial3Api>])
+    Composable
+  VALUE_PARAMETER name:onClickNav index:0 type:kotlin.Function0<kotlin.Unit>
+  VALUE_PARAMETER name:onClickSearch index:1 type:kotlin.Function0<kotlin.Unit>
+  VALUE_PARAMETER name:placeholder index:2 type:kotlin.String
+    EXPRESSION_BODY
+      ERROR_EXPR 'Default Stub' type=kotlin.String
+  VALUE_PARAMETER name:readOnly index:3 type:kotlin.Boolean
+    EXPRESSION_BODY
+      ERROR_EXPR 'Default Stub' type=kotlin.Boolean
+  VALUE_PARAMETER name:marginHorizontal index:4 type:androidx.compose.ui.unit.Dp
+    EXPRESSION_BODY
+      ERROR_EXPR 'Default Stub' type=androidx.compose.ui.unit.Dp
+  VALUE_PARAMETER name:marginTop index:5 type:androidx.compose.ui.unit.Dp
+    EXPRESSION_BODY
+      ERROR_EXPR 'Default Stub' type=androidx.compose.ui.unit.Dp
+  BLOCK_BODY
+    VAR name:textFieldColors type:androidx.compose.material3.TextFieldColors [val]
+      BLOCK type=androidx.compose.material3.TextFieldColors origin=ARGUMENTS_REORDERING_FOR_CALL
+        VAR IR_TEMPORARY_VARIABLE name:tmp0_$this type:androidx.compose.material3.OutlinedTextFieldDefaults [val]
+          GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:androidx.compose.material3.OutlinedTextFieldDefaults visibility:public [final,static]' type=androidx.compose.material3.OutlinedTextFieldDefaults origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp1_unfocusedTextColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp2_focusedTextColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp3_disabledTextColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getGray-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp4_errorTextColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getRed-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp5_unfocusedContainerColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getTransparent-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp6_focusedContainerColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getTransparent-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp7_disabledContainerColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun copy-wmQWz5c$default (arg0: androidx.compose.ui.graphics.Color, alpha: kotlin.Float, red: kotlin.Float, green: kotlin.Float, blue: kotlin.Float, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color' type=androidx.compose.ui.graphics.Color origin=DEFAULT_DISPATCH_CALL
+            arg0: CALL 'public final fun getGray-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+              $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+            alpha: CONST Float type=kotlin.Float value=0.2
+            red: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            green: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            blue: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            $mask0: CONST Int type=kotlin.Int value=14
+            $handler: CONST Null type=kotlin.Any? value=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp8_errorContainerColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun copy-wmQWz5c$default (arg0: androidx.compose.ui.graphics.Color, alpha: kotlin.Float, red: kotlin.Float, green: kotlin.Float, blue: kotlin.Float, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color' type=androidx.compose.ui.graphics.Color origin=DEFAULT_DISPATCH_CALL
+            arg0: CALL 'public final fun getRed-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+              $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+            alpha: CONST Float type=kotlin.Float value=0.1
+            red: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            green: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            blue: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            $mask0: CONST Int type=kotlin.Int value=14
+            $handler: CONST Null type=kotlin.Any? value=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp9_cursorColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp10_errorCursorColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getRed-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp11_focusedBorderColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp12_unfocusedBorderColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun <get-OverlayWhiteColor> (): androidx.compose.ui.graphics.Color declared in com.mck.theme.ColorKt' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+        VAR IR_TEMPORARY_VARIABLE name:tmp13_disabledBorderColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getGray-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp14_errorBorderColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getRed-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp15_focusedLeadingIconColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp16_unfocusedLeadingIconColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp17_disabledLeadingIconColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getGray-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp18_errorLeadingIconColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getRed-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp19_focusedTrailingIconColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp20_unfocusedTrailingIconColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp21_disabledTrailingIconColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getGray-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp22_errorTrailingIconColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getRed-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp23_focusedLabelColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp24_unfocusedLabelColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun copy-wmQWz5c$default (arg0: androidx.compose.ui.graphics.Color, alpha: kotlin.Float, red: kotlin.Float, green: kotlin.Float, blue: kotlin.Float, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color' type=androidx.compose.ui.graphics.Color origin=DEFAULT_DISPATCH_CALL
+            arg0: CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+              $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+            alpha: CONST Float type=kotlin.Float value=0.7
+            red: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            green: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            blue: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            $mask0: CONST Int type=kotlin.Int value=14
+            $handler: CONST Null type=kotlin.Any? value=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp25_disabledLabelColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getGray-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp26_errorLabelColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getRed-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp27_focusedPlaceholderColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun copy-wmQWz5c$default (arg0: androidx.compose.ui.graphics.Color, alpha: kotlin.Float, red: kotlin.Float, green: kotlin.Float, blue: kotlin.Float, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color' type=androidx.compose.ui.graphics.Color origin=DEFAULT_DISPATCH_CALL
+            arg0: CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+              $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+            alpha: CONST Float type=kotlin.Float value=0.7
+            red: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            green: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            blue: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            $mask0: CONST Int type=kotlin.Int value=14
+            $handler: CONST Null type=kotlin.Any? value=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp28_unfocusedPlaceholderColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun copy-wmQWz5c$default (arg0: androidx.compose.ui.graphics.Color, alpha: kotlin.Float, red: kotlin.Float, green: kotlin.Float, blue: kotlin.Float, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color' type=androidx.compose.ui.graphics.Color origin=DEFAULT_DISPATCH_CALL
+            arg0: CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+              $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+            alpha: CONST Float type=kotlin.Float value=0.7
+            red: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            green: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            blue: COMPOSITE type=kotlin.Float origin=DEFAULT_VALUE
+              CONST Float type=kotlin.Float value=0.0
+            $mask0: CONST Int type=kotlin.Int value=14
+            $handler: CONST Null type=kotlin.Any? value=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp29_disabledPlaceholderColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getGray-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp30_errorPlaceholderColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getRed-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp31_focusedSupportingTextColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp32_unfocusedSupportingTextColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp33_disabledSupportingTextColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getGray-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp34_errorSupportingTextColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getRed-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp35_focusedPrefixColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp36_unfocusedPrefixColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp37_disabledPrefixColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getGray-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp38_errorPrefixColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getRed-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp39_focusedSuffixColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp40_unfocusedSuffixColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getWhite-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp41_disabledSuffixColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getGray-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp42_errorSuffixColor type:androidx.compose.ui.graphics.Color [val]
+          CALL 'public final fun getRed-0d7_KjU (): androidx.compose.ui.graphics.Color declared in androidx.compose.ui.graphics.Color.Companion' type=androidx.compose.ui.graphics.Color origin=GET_PROPERTY
+            $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.graphics.Color.Companion visibility:public [final,static]' type=androidx.compose.ui.graphics.Color.Companion origin=null
+        CALL 'public final fun colors-pZyANzw$default ($this: androidx.compose.material3.OutlinedTextFieldDefaults, focusedTextColor: androidx.compose.ui.graphics.Color, unfocusedTextColor: androidx.compose.ui.graphics.Color, disabledTextColor: androidx.compose.ui.graphics.Color, errorTextColor: androidx.compose.ui.graphics.Color, focusedContainerColor: androidx.compose.ui.graphics.Color, unfocusedContainerColor: androidx.compose.ui.graphics.Color, disabledContainerColor: androidx.compose.ui.graphics.Color, errorContainerColor: androidx.compose.ui.graphics.Color, cursorColor: androidx.compose.ui.graphics.Color, errorCursorColor: androidx.compose.ui.graphics.Color, selectionColors: androidx.compose.foundation.text.selection.TextSelectionColors?, focusedBorderColor: androidx.compose.ui.graphics.Color, unfocusedBorderColor: androidx.compose.ui.graphics.Color, disabledBorderColor: androidx.compose.ui.graphics.Color, errorBorderColor: androidx.compose.ui.graphics.Color, focusedLeadingIconColor: androidx.compose.ui.graphics.Color, unfocusedLeadingIconColor: androidx.compose.ui.graphics.Color, disabledLeadingIconColor: androidx.compose.ui.graphics.Color, errorLeadingIconColor: androidx.compose.ui.graphics.Color, focusedTrailingIconColor: androidx.compose.ui.graphics.Color, unfocusedTrailingIconColor: androidx.compose.ui.graphics.Color, disabledTrailingIconColor: androidx.compose.ui.graphics.Color, errorTrailingIconColor: androidx.compose.ui.graphics.Color, focusedLabelColor: androidx.compose.ui.graphics.Color, unfocusedLabelColor: androidx.compose.ui.graphics.Color, disabledLabelColor: androidx.compose.ui.graphics.Color, errorLabelColor: androidx.compose.ui.graphics.Color, focusedPlaceholderColor: androidx.compose.ui.graphics.Color, unfocusedPlaceholderColor: androidx.compose.ui.graphics.Color, disabledPlaceholderColor: androidx.compose.ui.graphics.Color, errorPlaceholderColor: androidx.compose.ui.graphics.Color, focusedSupportingTextColor: androidx.compose.ui.graphics.Color, unfocusedSupportingTextColor: androidx.compose.ui.graphics.Color, disabledSupportingTextColor: androidx.compose.ui.graphics.Color, errorSupportingTextColor: androidx.compose.ui.graphics.Color, focusedPrefixColor: androidx.compose.ui.graphics.Color, unfocusedPrefixColor: androidx.compose.ui.graphics.Color, disabledPrefixColor: androidx.compose.ui.graphics.Color, errorPrefixColor: androidx.compose.ui.graphics.Color, focusedSuffixColor: androidx.compose.ui.graphics.Color, unfocusedSuffixColor: androidx.compose.ui.graphics.Color, disabledSuffixColor: androidx.compose.ui.graphics.Color, errorSuffixColor: androidx.compose.ui.graphics.Color, $mask0: kotlin.Int, $mask1: kotlin.Int, $handler: kotlin.Any?): androidx.compose.material3.TextFieldColors declared in androidx.compose.material3.OutlinedTextFieldDefaults' type=androidx.compose.material3.TextFieldColors origin=DEFAULT_DISPATCH_CALL
+          $this: GET_VAR 'val tmp0_$this: androidx.compose.material3.OutlinedTextFieldDefaults [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.material3.OutlinedTextFieldDefaults origin=null
+          focusedTextColor: GET_VAR 'val tmp2_focusedTextColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          unfocusedTextColor: GET_VAR 'val tmp1_unfocusedTextColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          disabledTextColor: GET_VAR 'val tmp3_disabledTextColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          errorTextColor: GET_VAR 'val tmp4_errorTextColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          focusedContainerColor: GET_VAR 'val tmp6_focusedContainerColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          unfocusedContainerColor: GET_VAR 'val tmp5_unfocusedContainerColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          disabledContainerColor: GET_VAR 'val tmp7_disabledContainerColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          errorContainerColor: GET_VAR 'val tmp8_errorContainerColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          cursorColor: GET_VAR 'val tmp9_cursorColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          errorCursorColor: GET_VAR 'val tmp10_errorCursorColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          selectionColors: COMPOSITE type=androidx.compose.foundation.text.selection.TextSelectionColors? origin=DEFAULT_VALUE
+            CONST Null type=androidx.compose.foundation.text.selection.TextSelectionColors? value=null
+          focusedBorderColor: GET_VAR 'val tmp11_focusedBorderColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          unfocusedBorderColor: GET_VAR 'val tmp12_unfocusedBorderColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          disabledBorderColor: GET_VAR 'val tmp13_disabledBorderColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          errorBorderColor: GET_VAR 'val tmp14_errorBorderColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          focusedLeadingIconColor: GET_VAR 'val tmp15_focusedLeadingIconColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          unfocusedLeadingIconColor: GET_VAR 'val tmp16_unfocusedLeadingIconColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          disabledLeadingIconColor: GET_VAR 'val tmp17_disabledLeadingIconColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          errorLeadingIconColor: GET_VAR 'val tmp18_errorLeadingIconColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          focusedTrailingIconColor: GET_VAR 'val tmp19_focusedTrailingIconColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          unfocusedTrailingIconColor: GET_VAR 'val tmp20_unfocusedTrailingIconColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          disabledTrailingIconColor: GET_VAR 'val tmp21_disabledTrailingIconColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          errorTrailingIconColor: GET_VAR 'val tmp22_errorTrailingIconColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          focusedLabelColor: GET_VAR 'val tmp23_focusedLabelColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          unfocusedLabelColor: GET_VAR 'val tmp24_unfocusedLabelColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          disabledLabelColor: GET_VAR 'val tmp25_disabledLabelColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          errorLabelColor: GET_VAR 'val tmp26_errorLabelColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          focusedPlaceholderColor: GET_VAR 'val tmp27_focusedPlaceholderColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          unfocusedPlaceholderColor: GET_VAR 'val tmp28_unfocusedPlaceholderColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          disabledPlaceholderColor: GET_VAR 'val tmp29_disabledPlaceholderColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          errorPlaceholderColor: GET_VAR 'val tmp30_errorPlaceholderColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          focusedSupportingTextColor: GET_VAR 'val tmp31_focusedSupportingTextColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          unfocusedSupportingTextColor: GET_VAR 'val tmp32_unfocusedSupportingTextColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          disabledSupportingTextColor: GET_VAR 'val tmp33_disabledSupportingTextColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          errorSupportingTextColor: GET_VAR 'val tmp34_errorSupportingTextColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          focusedPrefixColor: GET_VAR 'val tmp35_focusedPrefixColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          unfocusedPrefixColor: GET_VAR 'val tmp36_unfocusedPrefixColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          disabledPrefixColor: GET_VAR 'val tmp37_disabledPrefixColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          errorPrefixColor: GET_VAR 'val tmp38_errorPrefixColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          focusedSuffixColor: GET_VAR 'val tmp39_focusedSuffixColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          unfocusedSuffixColor: GET_VAR 'val tmp40_unfocusedSuffixColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          disabledSuffixColor: GET_VAR 'val tmp41_disabledSuffixColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          errorSuffixColor: GET_VAR 'val tmp42_errorSuffixColor: androidx.compose.ui.graphics.Color [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.graphics.Color origin=null
+          $mask0: CONST Int type=kotlin.Int value=1024
+          $mask1: CONST Int type=kotlin.Int value=0
+          $handler: CONST Null type=kotlin.Any? value=null
+    VAR name:shape type:androidx.compose.foundation.shape.RoundedCornerShape [val]
+      CALL 'public final fun RoundedCornerShape-0680j_4 (size: androidx.compose.ui.unit.Dp): androidx.compose.foundation.shape.RoundedCornerShape declared in androidx.compose.foundation.shape.RoundedCornerShapeKt' type=androidx.compose.foundation.shape.RoundedCornerShape origin=null
+        size: CALL 'public final fun <get-dp> (): androidx.compose.ui.unit.Dp [inline] declared in androidx.compose.ui.unit.DpKt' type=androidx.compose.ui.unit.Dp origin=GET_PROPERTY
+          $receiver: CONST Int type=kotlin.Int value=8
+    VAR name:interactionSource type:androidx.compose.foundation.interaction.MutableInteractionSource [val]
+      CALL 'public final fun remember <T> (calculation: @[DisallowComposableCalls] kotlin.Function0<T of androidx.compose.runtime.ComposablesKt.remember>): T of androidx.compose.runtime.ComposablesKt.remember [inline] declared in androidx.compose.runtime.ComposablesKt' type=androidx.compose.foundation.interaction.MutableInteractionSource origin=null
+        <T>: androidx.compose.foundation.interaction.MutableInteractionSource
+        calculation: BLOCK type=kotlin.Function0<androidx.compose.foundation.interaction.MutableInteractionSource> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun ContentSearchBar_Kr38_dQ$lambda$0 (): androidx.compose.foundation.interaction.MutableInteractionSource declared in com.mck.composable.ContentSearchBarKt' type=kotlin.Function0<androidx.compose.foundation.interaction.MutableInteractionSource> origin=INLINE_LAMBDA reflectionTarget=null
+    BLOCK type=kotlin.Unit origin=ARGUMENTS_REORDERING_FOR_CALL
+      VAR IR_TEMPORARY_VARIABLE name:tmp64_modifier type:androidx.compose.ui.Modifier [val]
+        CALL 'public final fun padding-qDBjuR0$default (start: androidx.compose.ui.unit.Dp, top: androidx.compose.ui.unit.Dp, end: androidx.compose.ui.unit.Dp, bottom: androidx.compose.ui.unit.Dp, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.PaddingKt' type=androidx.compose.ui.Modifier origin=DEFAULT_DISPATCH_CALL
+          $receiver: CALL 'public final fun padding-VpY3zN4$default (horizontal: androidx.compose.ui.unit.Dp, vertical: androidx.compose.ui.unit.Dp, $mask0: kotlin.Int, $handler: kotlin.Any?): androidx.compose.ui.Modifier declared in androidx.compose.foundation.layout.PaddingKt' type=androidx.compose.ui.Modifier origin=DEFAULT_DISPATCH_CALL
+            $receiver: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.Modifier.Companion visibility:public [final,static]' type=androidx.compose.ui.Modifier.Companion origin=null
+            horizontal: GET_VAR 'marginHorizontal: androidx.compose.ui.unit.Dp declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.unit.Dp origin=null
+            vertical: COMPOSITE type=androidx.compose.ui.unit.Dp origin=DEFAULT_VALUE
+              CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.unit.Dp origin=null
+                <T>: kotlin.Float
+                <R>: androidx.compose.ui.unit.Dp
+                v: CONST Float type=kotlin.Float value=0.0
+            $mask0: CONST Int type=kotlin.Int value=2
+            $handler: CONST Null type=kotlin.Any? value=null
+          start: COMPOSITE type=androidx.compose.ui.unit.Dp origin=DEFAULT_VALUE
+            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.unit.Dp origin=null
+              <T>: kotlin.Float
+              <R>: androidx.compose.ui.unit.Dp
+              v: CONST Float type=kotlin.Float value=0.0
+          top: GET_VAR 'marginTop: androidx.compose.ui.unit.Dp declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.unit.Dp origin=null
+          end: COMPOSITE type=androidx.compose.ui.unit.Dp origin=DEFAULT_VALUE
+            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.unit.Dp origin=null
+              <T>: kotlin.Float
+              <R>: androidx.compose.ui.unit.Dp
+              v: CONST Float type=kotlin.Float value=0.0
+          bottom: COMPOSITE type=androidx.compose.ui.unit.Dp origin=DEFAULT_VALUE
+            CALL 'public final fun <unsafe-coerce> <T, R> (v: T of kotlin.jvm.internal.<unsafe-coerce>): R of kotlin.jvm.internal.<unsafe-coerce> declared in kotlin.jvm.internal' type=androidx.compose.ui.unit.Dp origin=null
+              <T>: kotlin.Float
+              <R>: androidx.compose.ui.unit.Dp
+              v: CONST Float type=kotlin.Float value=0.0
+          $mask0: CONST Int type=kotlin.Int value=13
+          $handler: CONST Null type=kotlin.Any? value=null
+      VAR IR_TEMPORARY_VARIABLE name:tmp65_verticalAlignment type:androidx.compose.ui.Alignment.Vertical [val]
+        CALL 'public final fun <get-CenterVertically> (): androidx.compose.ui.Alignment.Vertical declared in androidx.compose.ui.Alignment.Companion' type=androidx.compose.ui.Alignment.Vertical origin=GET_PROPERTY
+          $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:androidx.compose.ui.Alignment.Companion visibility:public [final,static]' type=androidx.compose.ui.Alignment.Companion origin=null
+      VAR IR_TEMPORARY_VARIABLE name:tmp66_horizontalArrangement type:androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical [val]
+        CALL 'public final fun spacedBy-0680j_4 (space: androidx.compose.ui.unit.Dp): androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical declared in androidx.compose.foundation.layout.Arrangement' type=androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical origin=null
+          $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:INSTANCE type:androidx.compose.foundation.layout.Arrangement visibility:public [final,static]' type=androidx.compose.foundation.layout.Arrangement origin=null
+          space: CALL 'public final fun <get-dp> (): androidx.compose.ui.unit.Dp [inline] declared in androidx.compose.ui.unit.DpKt' type=androidx.compose.ui.unit.Dp origin=GET_PROPERTY
+            $receiver: CONST Int type=kotlin.Int value=16
+      CALL 'public final fun Row (modifier: androidx.compose.ui.Modifier, horizontalArrangement: androidx.compose.foundation.layout.Arrangement.Horizontal, verticalAlignment: androidx.compose.ui.Alignment.Vertical, content: @[Composable] @[ExtensionFunctionType] kotlin.Function1<androidx.compose.foundation.layout.RowScope, kotlin.Unit>): kotlin.Unit [inline] declared in androidx.compose.foundation.layout.RowKt' type=kotlin.Unit origin=null
+        modifier: GET_VAR 'val tmp64_modifier: androidx.compose.ui.Modifier [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.Modifier origin=null
+        horizontalArrangement: GET_VAR 'val tmp66_horizontalArrangement: androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.foundation.layout.Arrangement.HorizontalOrVertical origin=null
+        verticalAlignment: GET_VAR 'val tmp65_verticalAlignment: androidx.compose.ui.Alignment.Vertical [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.ui.Alignment.Vertical origin=null
+        content: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<androidx.compose.foundation.layout.RowScope, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun ContentSearchBar_Kr38_dQ$lambda$10 ($readOnly: kotlin.Boolean, $onClickNav: kotlin.Function0<kotlin.Unit>, $onClickSearch: kotlin.Function0<kotlin.Unit>, $interactionSource: androidx.compose.foundation.interaction.MutableInteractionSource, $textFieldColors: androidx.compose.material3.TextFieldColors, $placeholder: kotlin.String, $shape: androidx.compose.foundation.shape.RoundedCornerShape): kotlin.Unit declared in com.mck.composable.ContentSearchBarKt' type=@[ExtensionFunctionType] kotlin.Function1<androidx.compose.foundation.layout.RowScope, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+            $readOnly: GET_VAR 'readOnly: kotlin.Boolean declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=kotlin.Boolean origin=null
+            $onClickNav: GET_VAR 'onClickNav: kotlin.Function0<kotlin.Unit> declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=kotlin.Function0<kotlin.Unit> origin=null
+            $onClickSearch: GET_VAR 'onClickSearch: kotlin.Function0<kotlin.Unit> declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=kotlin.Function0<kotlin.Unit> origin=null
+            $interactionSource: GET_VAR 'val interactionSource: androidx.compose.foundation.interaction.MutableInteractionSource [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.foundation.interaction.MutableInteractionSource origin=null
+            $textFieldColors: GET_VAR 'val textFieldColors: androidx.compose.material3.TextFieldColors [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.material3.TextFieldColors origin=null
+            $placeholder: GET_VAR 'placeholder: kotlin.String declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=kotlin.String origin=null
+            $shape: GET_VAR 'val shape: androidx.compose.foundation.shape.RoundedCornerShape [val] declared in com.mck.composable.ContentSearchBarKt.ContentSearchBar-Kr38-dQ' type=androidx.compose.foundation.shape.RoundedCornerShape origin=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:42)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:385)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:402)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:169)
+	at org.jetbrains.kotlin.backend.jvm.FileCodegen.lower(JvmPhases.kt:41)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt.makeIrFilePhase$lambda$5(PhaseBuilders.kt:114)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$createSimpleNamedCompilerPhase$1.phaseBody(PhaseBuilders.kt:71)
+	at org.jetbrains.kotlin.backend.common.phaser.SimpleNamedCompilerPhase.phaseBody(CompilerPhase.kt:226)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:62)
+	... 43 more
+Caused by: org.jetbrains.kotlin.codegen.CompilationException: Back-end (JVM) Internal error: Couldn't inline method call: CALL 'public final fun remember <T> (calculation: @[DisallowComposableCalls] kotlin.Function0<T of androidx.compose.runtime.ComposablesKt.remember>): T of androidx.compose.runtime.ComposablesKt.remember [inline] declared in androidx.compose.runtime.ComposablesKt' type=androidx.compose.foundation.interaction.MutableInteractionSource origin=null
+Method: null
+File is unknown
+The root cause java.lang.IllegalStateException was thrown at: org.jetbrains.kotlin.codegen.inline.SourceCompilerForInlineKt.getMethodNode(SourceCompilerForInline.kt:118)
+	at org.jetbrains.kotlin.codegen.inline.InlineCodegen.performInline(InlineCodegen.kt:65)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCodegen.genInlineCall(IrInlineCodegen.kt:162)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCallGenerator.genCall(IrInlineCallGenerator.kt:36)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:647)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:784)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.declarations.IrVariable.accept(IrVariable.kt:36)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:578)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:239)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:121)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:46)
+	... 53 more
+Caused by: java.lang.IllegalStateException: couldn't find inline method Landroidx/compose/runtime/ComposablesKt;.remember(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+	at org.jetbrains.kotlin.codegen.inline.SourceCompilerForInlineKt.getMethodNode(SourceCompilerForInline.kt:118)
+	at org.jetbrains.kotlin.codegen.inline.SourceCompilerForInlineKt.loadCompiledInlineFunction(SourceCompilerForInline.kt:96)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrSourceCompilerForInline.compileInlineFunction(IrSourceCompilerForInline.kt:91)
+	at org.jetbrains.kotlin.codegen.inline.InlineCodegen.compileInline(InlineCodegen.kt:43)
+	at org.jetbrains.kotlin.codegen.inline.InlineCodegen.performInline(InlineCodegen.kt:51)
+	... 68 more
+
+
