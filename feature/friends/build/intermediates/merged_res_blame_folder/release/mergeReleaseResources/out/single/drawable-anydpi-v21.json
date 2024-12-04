@@ -1,0 +1,154 @@
+[
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/ic_call_decline_low.xml",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-anydpi-v21/ic_call_decline_low.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_pause_circle_filled.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_pause_circle_filled.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_fullscreen_exit.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_fullscreen_exit.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_fullscreen_exit.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_fullscreen_exit.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/ic_call_answer_low.xml",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-anydpi-v21/ic_call_answer_low.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_play.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_play.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_check.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_check.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_settings.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_settings.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/ic_call_answer_video.xml",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-anydpi-v21/ic_call_answer_video.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_play_circle_filled.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_play_circle_filled.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_default_album_image.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_default_album_image.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/ic_call_answer.xml",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-anydpi-v21/ic_call_answer.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_shuffle_off.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_shuffle_off.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_previous.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_previous.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_chevron_right.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_chevron_right.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/ic_call_decline.xml",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-anydpi-v21/ic_call_decline.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_repeat_all.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_repeat_all.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_subtitle_on.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_subtitle_on.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_subtitle_off.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_subtitle_off.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_fullscreen_enter.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_fullscreen_enter.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_fullscreen_enter.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_fullscreen_enter.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_speed.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_speed.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_repeat_one.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_repeat_one.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_fastforward.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_fastforward.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_repeat_off.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_repeat_off.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_next.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_next.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_shuffle_on.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_shuffle_on.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_skip_next.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_skip_next.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_stop.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_stop.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_rewind.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_rewind.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_icon_pause.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_icon_pause.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/ic_call_answer_video_low.xml",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-anydpi-v21/ic_call_answer_video_low.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_forward.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_forward.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_rewind.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_rewind.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_skip_previous.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_skip_previous.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_chevron_left.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_chevron_left.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_ic_audiotrack.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_ic_audiotrack.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-anydpi-v21/exo_edit_mode_logo.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-anydpi-v21/exo_edit_mode_logo.xml"
+    }
+]

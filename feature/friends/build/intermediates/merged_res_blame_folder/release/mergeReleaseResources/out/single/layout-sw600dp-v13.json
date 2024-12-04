@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.mck.friends-release-68:/layout-sw600dp-v13/mtrl_layout_snackbar.xml",
+        "source": "com.mck.friends-material-1.7.0-36:/layout-sw600dp-v13/mtrl_layout_snackbar.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "com.mck.friends-material-1.7.0-36:/layout-sw600dp-v13/design_layout_snackbar.xml"
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.mck.friends-release-68:/mipmap-mdpi-v4/ic_launcher_foreground.png",
+        "source": "com.mck.friends-release-63:/mipmap-mdpi-v4/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/mipmap-mdpi-v4/ic_launcher_round.png",
+        "source": "com.mck.friends-release-63:/mipmap-mdpi-v4/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/mipmap-mdpi-v4/ic_launcher.png",
+        "source": "com.mck.friends-release-63:/mipmap-mdpi-v4/ic_launcher.png"
+    }
+]

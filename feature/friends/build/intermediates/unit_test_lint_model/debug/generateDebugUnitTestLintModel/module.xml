@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/home/thanhtb5/Documents/FPT/OJT_FRESHER/STUDY_APP/ANDROID/TakTak/TakTak/feature/friends"
+    name=":feature:friends"
+    type="LIBRARY"
+    maven="TakTak.feature:friends:unspecified"
+    agpVersion="8.5.0"
+    buildFolder="build"
+    bootClassPath="/home/thanhtb5/Android/Sdk/platforms/android-34/android.jar:/home/thanhtb5/Android/Sdk/build-tools/34.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="11"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="debug"/>
+</lint-module>

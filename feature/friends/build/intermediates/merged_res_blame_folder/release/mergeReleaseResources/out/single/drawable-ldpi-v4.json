@@ -1,0 +1,162 @@
+[
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_vr.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_vr.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_subtitle_off.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_subtitle_off.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_pause_circle_filled.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_pause_circle_filled.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_previous.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_previous.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_shuffle_off.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_shuffle_off.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/ic_call_decline_low.png",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-ldpi-v4/ic_call_decline_low.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_fullscreen_enter.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_fullscreen_enter.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_skip_previous.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_skip_previous.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_stop.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_stop.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_repeat_one.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_repeat_one.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_default_album_image.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_default_album_image.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_settings.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_settings.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_rewind.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_rewind.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/ic_call_answer_video_low.png",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-ldpi-v4/ic_call_answer_video_low.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_play_circle_filled.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_play_circle_filled.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_circular_play.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_circular_play.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_check.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_check.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_forward.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_forward.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/ic_call_answer_video.png",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-ldpi-v4/ic_call_answer_video.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_next.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_next.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_chevron_right.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_chevron_right.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_fullscreen_exit.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_fullscreen_exit.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_repeat_off.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_repeat_off.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_play.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_play.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_fastforward.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_fastforward.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_rewind.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_rewind.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_edit_mode_logo.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_edit_mode_logo.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_speed.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_speed.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_fullscreen_enter.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_fullscreen_enter.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_audiotrack.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_audiotrack.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_fullscreen_exit.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_fullscreen_exit.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_repeat_all.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_repeat_all.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_chevron_left.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_chevron_left.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_shuffle_on.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_shuffle_on.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_skip_next.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_skip_next.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/ic_call_decline.png",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-ldpi-v4/ic_call_decline.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_ic_subtitle_on.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_ic_subtitle_on.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/exo_icon_pause.png",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/drawable-ldpi-v4/exo_icon_pause.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/ic_call_answer_low.png",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-ldpi-v4/ic_call_answer_low.png"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/drawable-ldpi-v4/ic_call_answer.png",
+        "source": "com.mck.friends-core-1.12.0-24:/drawable-ldpi-v4/ic_call_answer.png"
+    }
+]

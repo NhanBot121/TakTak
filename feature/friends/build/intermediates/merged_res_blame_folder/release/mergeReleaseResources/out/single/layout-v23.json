@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.mck.friends-release-68:/layout-v23/exo_player_control_ffwd_button.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/layout-v23/exo_player_control_ffwd_button.xml"
+    },
+    {
+        "merged": "com.mck.friends-release-68:/layout-v23/exo_player_control_rewind_button.xml",
+        "source": "com.mck.friends-media3-ui-1.4.0-49:/layout-v23/exo_player_control_rewind_button.xml"
+    }
+]
