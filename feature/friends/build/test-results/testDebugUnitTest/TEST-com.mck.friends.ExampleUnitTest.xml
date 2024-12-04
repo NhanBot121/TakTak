@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.mck.friends.ExampleUnitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-04T02:47:21" hostname="thanhtb5-Vostro-15-3510" time="0.013">
-  <properties/>
-  <testcase name="addition_isCorrect" classname="com.mck.friends.ExampleUnitTest" time="0.013"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
