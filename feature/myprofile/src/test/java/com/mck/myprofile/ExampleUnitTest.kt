@@ -1,4 +1,4 @@
-package com.mck.profile
+package com.mck.myprofile
 
 import org.junit.Test
 

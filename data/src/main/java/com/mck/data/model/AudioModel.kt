@@ -1,4 +1,9 @@
 package com.mck.data.model
 
-class AudioModel {
-}
+data class AudioModel(
+    val audioCoverImage:String,
+    val isOriginal:Boolean,
+    val audioAuthor:UserModel,
+    val numberOfPost:Long,
+    val originalVideoUrl:String,
+)

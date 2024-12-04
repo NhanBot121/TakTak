@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+
 }
 
 android {
@@ -23,6 +25,13 @@ android {
             )
         }
     }
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.15"
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -33,6 +42,26 @@ android {
 }
 
 dependencies {
+
+
+    implementation(project(":core"))
+    implementation(project(":common:composable"))
+    implementation(project(":common:theme"))
+
+    implementation (libs.androidx.emoji2)
+
+
+
+    // Jetpack Compose
+    implementation (libs.ui) // Core Compose UI
+    implementation (libs.material3) // Material 3 components
+    implementation (libs.androidx.foundation )// Foundation components
+    implementation (libs.androidx.foundation.layout) // Layout components
+    implementation (libs.androidx.material) // Material components (optional)
+    implementation (libs.ui.tooling.preview) // For UI Preview in Android Studio
+    implementation (libs.androidx.runtime) // Compose runtime
+    implementation (libs.androidx.ui.text )// For text-related components like ClickableText
+    implementation (libs.androidx.navigation.compose) // For navigation with Compose
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

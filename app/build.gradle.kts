@@ -63,8 +63,12 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":common:theme"))
     implementation(project(":common:composable"))
-    implementation(project(":feature:friends"))
+    implementation(project(":feature:discovery"))
     implementation(project(":feature:home"))
+    implementation(project(":feature:inbox"))
+    implementation(project(":feature:myprofile"))
+    implementation(project(":feature:cameramedia"))
+
 
     implementation (libs.androidx.emoji2)
     implementation(libs.androidx.emoji2.views)

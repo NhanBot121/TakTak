@@ -5,7 +5,7 @@ import androidx.annotation.StringRes
 import com.mck.core.DestinationRoute
 
 import com.mck.core.DestinationRoute.CAMERA_ROUTE
-import com.mck.core.DestinationRoute.FRIENDS_ROUTE
+import com.mck.core.DestinationRoute.DISCOVERY_ROUTE
 import com.mck.core.DestinationRoute.HOME_SCREEN_ROUTE
 import com.mck.core.DestinationRoute.INBOX_ROUTE
 import com.mck.core.DestinationRoute.MY_PROFILE_ROUTE
@@ -28,11 +28,11 @@ enum class BottomBarDestination(
         filledIcon = R.drawable.ic_home_fill
     ),
 
-    FRIENDS(
-        route = FRIENDS_ROUTE,
-        title = R.string.friends,
-        unFilledIcon = R.drawable.ic_friends,
-        filledIcon = R.drawable.ic_friends
+    DISCOVERY(
+        route = DISCOVERY_ROUTE,
+        title = R.string.discovery,
+        unFilledIcon = R.drawable.ic_discovery,
+        filledIcon = R.drawable.ic_discovery
     ),
 
     ADD(

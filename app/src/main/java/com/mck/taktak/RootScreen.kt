@@ -48,7 +48,7 @@ fun RootScreen() {
         DestinationRoute.HOME_SCREEN_ROUTE,
         DestinationRoute.INBOX_ROUTE,
         DestinationRoute.COMMENT_BOTTOM_SHEET_ROUTE,
-        DestinationRoute.FRIENDS_ROUTE,
+        DestinationRoute.DISCOVERY_ROUTE,
         DestinationRoute.AUTHENTICATION_ROUTE,
         DestinationRoute.MY_PROFILE_ROUTE, null -> true
         else -> false

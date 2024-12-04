@@ -1,4 +1,4 @@
-package com.mck.profile
+package com.mck.myprofile
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,7 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.mck.composable.TopBar
-import com.mck.theme.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

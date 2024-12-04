@@ -1,4 +1,4 @@
-package com.mck.profile
+package com.mck.myprofile
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder

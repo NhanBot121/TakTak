@@ -27,7 +27,7 @@ fun DiscoveryScreen(navController: NavController) {
                 .padding(it)
                 .fillMaxSize()
         ) {
-            Text("FriendScreen")
+            Text("Discovery Screen")
         }
     }
 }

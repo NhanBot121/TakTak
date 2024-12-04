@@ -15,7 +15,9 @@ object DestinationRoute {
 
     const val INBOX_ROUTE = "inbox_route"
     const val MY_PROFILE_ROUTE = "my_profile_route"
-    const val FRIENDS_ROUTE = "friends_route"
+//    const val FRIENDS_ROUTE = "friends_route"
+    const val DISCOVERY_ROUTE = "discovery_route"
+
     const val CAMERA_ROUTE = "camera_route"
 
     const val AUTHENTICATION_ROUTE = "authentication_route"

@@ -1,4 +1,4 @@
-package com.mck.profile
+package com.mck.myprofile
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
