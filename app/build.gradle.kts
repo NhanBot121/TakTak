@@ -2,11 +2,10 @@ import com.android.build.api.dsl.Packaging
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.compose.compiler)
+    id("com.google.gms.google-services")
 
-    id("kotlin-kapt")
-    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -14,9 +13,9 @@ android {
     compileSdk = 34
 
 
-    fun Packaging.() {
-        resources.excludes.add("META-INF/**/*")
-    }
+//    fun Packaging.() {
+//        resources.excludes.add("META-INF/**/*")
+//    }
 
     defaultConfig {
         applicationId = "com.mck.taktak"
@@ -83,7 +82,7 @@ dependencies {
 
 
     implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+    //kapt(libs.hilt.android.compiler)
 
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
@@ -126,6 +125,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 }
 
-kapt {
-    correctErrorTypes = true
-}
+//kapt {
+//    correctErrorTypes = true
+//}

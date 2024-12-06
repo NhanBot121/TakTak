@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-
+    //alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -50,6 +50,20 @@ dependencies {
 
     implementation (libs.androidx.emoji2)
 
+    implementation (libs.coil.compose)
+    implementation ("androidx.media3:media3-exoplayer: 1.4.0")
+    implementation ("androidx.media3:media3-exoplayer-dash: 1.4.0")
+    implementation ("androidx.media3:media3-ui:1.4.0")
+    implementation("androidx.compose.material3:material3:1.3.1")
+    implementation (libs.androidx.constraintlayout.compose)
+    //implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
 
 
     // Jetpack Compose
@@ -66,6 +80,8 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(project(":data"))
+    implementation(libs.androidx.runtime.livedata)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

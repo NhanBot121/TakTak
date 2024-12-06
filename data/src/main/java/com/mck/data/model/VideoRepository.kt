@@ -1,7 +1,7 @@
-package com.example.data.repository
+package com.mck.data.model
 
 import android.util.Log
-import com.example.data.model.VideoDetails
+import com.mck.data.model.VideoDetails
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
 

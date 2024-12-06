@@ -2,7 +2,7 @@ package com.example.home
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import com.example.data.model.VideoDetails
+import com.mck.data.model.VideoDetails
 
 @Composable
 fun CommentScreen(video: VideoDetails){

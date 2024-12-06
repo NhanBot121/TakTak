@@ -1,4 +1,4 @@
-package com.example.data.model
+package com.mck.data.model
 
 data class VideoDetails(
     //val authorDetails: UserModel,

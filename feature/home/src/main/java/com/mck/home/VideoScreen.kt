@@ -49,9 +49,9 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
-import com.example.data.repository.VideoRepository
+import com.mck.data.model.VideoRepository
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.data.model.VideoDetails
+import com.mck.data.model.VideoDetails
 import kotlinx.coroutines.launch
 
 @ExperimentalMaterial3Api
@@ -88,7 +88,7 @@ fun VideoScreen(
             var showBottomSheet by remember { mutableStateOf(false) }
             // Each page contains a video player
             Box(
-                modifier = Modifier.fillMaxWidth().fillMaxHeight(0.94f)
+                modifier = Modifier.fillMaxSize()
             ) {
                 // Video Player
                 TikTokVideoPlayer(
