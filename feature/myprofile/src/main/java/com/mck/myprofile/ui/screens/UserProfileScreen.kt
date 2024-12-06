@@ -21,10 +21,11 @@ import coil.compose.rememberImagePainter
 import com.mck.myprofile.user.User
 import com.mck.myprofile.user.UserViewModel
 import androidx.compose.ui.platform.LocalContext
+import androidx.navigation.NavHostController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: NavController) {
+fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: NavHostController) {
     // Lấy thông tin người dùng từ Firebase
     var user by remember { mutableStateOf<User?>(null) }
     var isLoading by remember { mutableStateOf(true) }
@@ -167,5 +168,5 @@ fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: Nav
 @Preview
 @Composable
 fun UserProfileScreenPreview() {
-    UserProfileScreen(navController = NavController(LocalContext.current))
+    UserProfileScreen(navController = NavHostController(LocalContext.current))
 }

@@ -14,6 +14,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.mck.composable.TopBar
 import com.mck.myprofile.ui.screens.LoginScreen
 import com.mck.myprofile.ui.screens.SignUpScreen
@@ -29,11 +30,19 @@ fun MyProfileScreen(navController: NavHostController) {
             title = stringResource(id = com.mck.theme.R.string.my_account)
         )
     }) {
-        NavHost(navController = navController, startDestination = "login") {
-            // Define your composables here with correct navigation
-            composable("login") { LoginScreen(navController = navController) }
-            composable("signup") { SignUpScreen(navController = navController) }
-            composable("profile") { UserProfileScreen(navController = navController) }
+        ProfileSCreen()
+    }
+}
+
+@Composable
+fun ProfileSCreen(){
+    val profileNavController = rememberNavController()
+    NavHost(navController = profileNavController, startDestination = "login") {
+        // Define your composables here with correct navigation
+        composable("login") {
+            LoginScreen(navController = profileNavController)
         }
+        composable("signup") { SignUpScreen(navController = profileNavController) }
+        composable("profile") { UserProfileScreen(navController = profileNavController) }
     }
 }

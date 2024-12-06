@@ -9,10 +9,11 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 import com.mck.myprofile.user.UserViewModel
 
 @Composable
-fun LoginScreen(viewModel: UserViewModel = viewModel(), navController: NavController) {
+fun LoginScreen(viewModel: UserViewModel = viewModel(), navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }

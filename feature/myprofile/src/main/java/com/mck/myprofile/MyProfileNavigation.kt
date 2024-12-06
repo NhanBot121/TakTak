@@ -11,5 +11,4 @@ fun NavGraphBuilder.myProfileNavGraph(navController: NavHostController) {
     composable(route = MY_PROFILE_ROUTE) {
         MyProfileScreen(navController)
     }
-
 }

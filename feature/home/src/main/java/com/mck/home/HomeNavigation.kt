@@ -15,5 +15,4 @@ fun NavGraphBuilder.homeNavGraph(navController: NavController) {
         VideoScreen()
 
     }
-
 }

@@ -11,9 +11,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.mck.myprofile.user.UserViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 
 @Composable
-fun SignUpScreen(viewModel: UserViewModel = viewModel(), navController: NavController) {
+fun SignUpScreen(viewModel: UserViewModel = viewModel(), navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var confirmPassword by remember { mutableStateOf("") }
