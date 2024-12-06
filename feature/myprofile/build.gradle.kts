@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.gms.google-services") // Thêm plugin Google Services để sử dụng Firebase
+    kotlin("kapt")
 
 }
 
@@ -69,4 +71,35 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Import the Firebase BoM
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    // Thêm thư viện Coil cho Jetpack Compose
+    implementation("io.coil-kt:coil-compose:2.4.0") // Kiểm tra phiên bản mới nhất nếu cần
+
+    // Nếu bạn cần hỗ trợ cho hình ảnh tải qua URL HTTPS, bạn có thể thêm thêm thư viện sau:
+    implementation("io.coil-kt:coil:2.4.0")
+
+    // Firebase Authentication (nếu bạn sử dụng Firebase Auth)
+    implementation("com.google.firebase:firebase-auth-ktx")
+
+    // Firebase Firestore (nếu bạn sử dụng Firestore)
+    implementation("com.google.firebase:firebase-firestore-ktx")
+
+    // Jetpack Compose Navigation
+    implementation(libs.androidx.navigation.compose)
+
+    // Accompanist Navigation Material (for BottomSheet support)
+    implementation(libs.accompanist.navigation.material)
+
+    // Accompanist System UI Controller (for handling system UI like status bar)
+    implementation(libs.accompanist.systemuicontroller)
+
+    // Jetpack Compose UI
+    implementation(libs.androidx.ui)
+
+    // Jetpack Compose Material3 (optional, if you're using Material3)
+    implementation(libs.androidx.material3)
+
 }
