@@ -2,7 +2,10 @@ package com.mck.myprofile.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
@@ -149,8 +152,40 @@ fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: Nav
                         ) {
                             Text("Log Out")
                         }
-                    }
 
+
+                        // Hiển thị video thumbnails
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Text("Your Favorite Videos", style = MaterialTheme.typography.titleMedium)
+
+                        // LazyRow để hiển thị các video thumbnail
+                        if (it.videoThumbnailUrls.isNotEmpty()) {
+                            LazyRow(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                items(it.videoThumbnailUrls) { thumbnailUrl ->
+                                    // Ảnh thumbnail
+                                    if (thumbnailUrl.isNotEmpty()) {
+                                        Image(
+                                            painter = rememberImagePainter(thumbnailUrl),
+                                            contentDescription = "Video Thumbnail",
+                                            modifier = Modifier
+                                                .size(120.dp)
+                                                .clip(CircleShape)
+                                                .border(2.dp, Color.Gray, CircleShape)
+                                                .clickable {
+                                                    // Bạn có thể thêm logic để điều hướng hoặc phát video khi nhấn vào thumbnail
+                                                }
+                                        )
+                                    }
+                                }
+                            }
+                        } else {
+                            Text(text = "No videos found", style = MaterialTheme.typography.bodySmall)
+                        }
+
+                    }
                     // Hiển thị thông báo lỗi (nếu có)
                     if (errorMessage.isNotEmpty()) {
                         Spacer(modifier = Modifier.height(16.dp))

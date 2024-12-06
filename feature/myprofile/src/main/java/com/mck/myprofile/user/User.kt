@@ -8,8 +8,8 @@ data class User(
     val following: Int = 0,
     val followers: Int = 0,
     val likes: Int = 0,
-    val videoThumbnailUrl: String = "", // URL thumbnail cho video
-    val videoUrl: String = "" // URL video
+    val videoThumbnailUrls: List<String> = emptyList(), // Danh sách các video thumbnail
+    val videoUrls: List<String> = emptyList() // Danh sách các video URL
 
 
 )
