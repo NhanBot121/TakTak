@@ -5,6 +5,9 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -160,9 +163,12 @@ fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: Nav
 
                         // LazyRow để hiển thị các video thumbnail
                         if (it.videoThumbnailUrls.isNotEmpty()) {
-                            LazyRow(
+                            LazyVerticalGrid(
+                                columns = GridCells.Fixed(3), // 3 video mỗi hàng
                                 modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                contentPadding = PaddingValues(8.dp),
+                                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                verticalArrangement = Arrangement.spacedBy(8.dp)
                             ) {
                                 items(it.videoThumbnailUrls) { thumbnailUrl ->
                                     // Ảnh thumbnail
@@ -172,8 +178,7 @@ fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: Nav
                                             contentDescription = "Video Thumbnail",
                                             modifier = Modifier
                                                 .size(120.dp)
-                                                .clip(CircleShape)
-                                                .border(2.dp, Color.Gray, CircleShape)
+                                                .border(1.dp, Color.Gray)
                                                 .clickable {
                                                     // Bạn có thể thêm logic để điều hướng hoặc phát video khi nhấn vào thumbnail
                                                 }
