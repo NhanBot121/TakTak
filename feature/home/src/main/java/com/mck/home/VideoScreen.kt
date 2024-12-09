@@ -138,11 +138,8 @@ fun VideoScreen(
                         },
                         sheetState = sheetState
                     ) {
-                    Scaffold(
-                    ) { paddingValues ->
-                        Text("Hide bottom sheet", modifier = Modifier.padding(paddingValues))
                         CommentScreen(video)
-                    }
+
                     }
                 }
             }
