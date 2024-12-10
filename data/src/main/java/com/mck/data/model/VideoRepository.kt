@@ -9,15 +9,15 @@ class VideoRepository {
     private val firestore = FirebaseFirestore.getInstance()
 
 
-    suspend fun getVideoDetails(): List<VideoDetails> {
-        val snapshot = firestore.collection("video").get().await()
+    suspend fun getVideoDetails(userId: String): List<VideoDetails> {
+        val snapshot = firestore.collection(userId).get().await()
         val videoList = mutableListOf<VideoDetails>()
 
         // Collect all videos
         for (document in snapshot.documents) {
             val video = document.toObject(VideoDetails::class.java)
             video?.let { it ->
-                val commentsSnapshot = firestore.collection("video")
+                val commentsSnapshot = firestore.collection(userId)
                     .document(document.id)
                     .collection("commentList")
                     .get()
