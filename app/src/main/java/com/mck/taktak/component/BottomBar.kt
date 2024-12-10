@@ -24,8 +24,8 @@ fun BottomBar(
 ) {
     NavigationBar(
         modifier = Modifier
-            .height(100.dp)
-            .shadow(elevation = 16.dp)
+            .height(60.dp)
+            .shadow(elevation = 6.dp)
             .padding(top = 2.dp)
 
     ) {
@@ -62,17 +62,17 @@ fun RowScope.BottomItem(
 
     NavigationBarItem(
         modifier = Modifier.offset(y = -BottomBarItemVerticalOffset),
-        label = {
-            screen.title?.let {
-                Text(
-                    modifier = Modifier.offset(y = BottomBarItemVerticalOffset.times(1.85f)),
-                    text = stringResource(id = screen.title),
-                    style = MaterialTheme.typography.labelSmall,
-                    softWrap = false,
-                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = if (isCurrentBottomItemSelected) 1f else 0.7f)
-                )
-            }
-        },
+//        label = {
+//            screen.title?.let {
+//                Text(
+//                    modifier = Modifier.offset(y = BottomBarItemVerticalOffset.times(1.85f)),
+//                    text = stringResource(id = screen.title),
+//                    style = MaterialTheme.typography.labelSmall,
+//                    softWrap = false,
+//                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = if (isCurrentBottomItemSelected) 1f else 0.7f)
+//                )
+//            }
+//        },
         icon = {
             Icon(
                 painter = painterResource(id = icon),

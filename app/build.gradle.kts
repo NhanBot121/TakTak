@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
     id("com.google.gms.google-services")
+    id("org.jetbrains.kotlin.kapt")
+    id("com.google.dagger.hilt.android")
 
 }
 
@@ -13,9 +15,9 @@ android {
     compileSdk = 34
 
 
-//    fun Packaging.() {
-//        resources.excludes.add("META-INF/**/*")
-//    }
+    fun Packaging.() {
+        resources.excludes.add("META-INF/**/*")
+    }
 
     defaultConfig {
         applicationId = "com.mck.taktak"
@@ -48,12 +50,12 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.15"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
 
     configurations.all {
         resolutionStrategy {
-            force("androidx.emoji2:emoji2:1.5.0")   // or the version you are using
+            force("androidx.emoji2:emoji2:1.5.0")
         }
     }
 }
@@ -67,6 +69,16 @@ dependencies {
     implementation(project(":feature:inbox"))
     implementation(project(":feature:myprofile"))
     implementation(project(":feature:cameramedia"))
+
+//    implementation (libs.play.services)
+
+
+    // CameraX dependencies
+    implementation("androidx.camera:camera-camera2:1.4.0") // Camera2 implementation
+    implementation("androidx.camera:camera-lifecycle:1.4.0") // Lifecycle integration
+    implementation("androidx.camera:camera-view:1.4.0") // For the camera preview view
+
+
 
 
     implementation (libs.androidx.emoji2)
@@ -82,7 +94,7 @@ dependencies {
 
 
     implementation(libs.hilt.android)
-    //kapt(libs.hilt.android.compiler)
+    kapt(libs.hilt.android.compiler)
 
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
@@ -125,6 +137,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 }
 
-//kapt {
-//    correctErrorTypes = true
-//}
+kapt {
+    correctErrorTypes = true
+}
