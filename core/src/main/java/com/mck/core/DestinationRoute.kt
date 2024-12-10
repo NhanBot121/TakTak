@@ -9,13 +9,16 @@ object DestinationRoute {
     const val COMMENT_BOTTOM_SHEET_ROUTE = "comment_bottom_sheet_route"
     const val CREATOR_PROFILE_ROUTE = "creator_profile_route"
 
+    const val FORMATTED_COMPLETE_VIDEO_ROUTE =
+        "$HOME_SCREEN_ROUTE/$USER_ID/$VIDEO_INDEX"
+
+
     const val CREATOR_VIDEO_ROUTE = "creator_video_route"
     const val FORMATTED_COMPLETE_CREATOR_VIDEO_ROUTE =
         "$CREATOR_VIDEO_ROUTE/{$USER_ID}/{$VIDEO_INDEX}"
 
     const val INBOX_ROUTE = "inbox_route"
     const val MY_PROFILE_ROUTE = "my_profile_route"
-//    const val FRIENDS_ROUTE = "friends_route"
     const val DISCOVERY_ROUTE = "discovery_route"
 
     const val CAMERA_ROUTE = "camera_route"
