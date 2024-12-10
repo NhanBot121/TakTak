@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "835814943378",
+    "project_id": "taktak-bec6e",
+    "storage_bucket": "taktak-bec6e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835814943378:android:7213d41b7b237bd25a544b",
+        "android_client_info": {
+          "package_name": "com.mck.myprofile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVWQUK4VHXrx1IyppEdNND8jb4d1C3fAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

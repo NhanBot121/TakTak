@@ -11,4 +11,8 @@ fun NavGraphBuilder.discoveryNavGraph(navController: NavController) {
     composable(route = DestinationRoute.DISCOVERY_ROUTE) {
         DiscoveryScreen(navController)
     }
+    composable("videoPlayer/{videoUrl}") { backStackEntry ->
+        val videoUrl = backStackEntry.arguments?.getString("videoUrl") ?: ""
+        VideoPlayerScreen(videoUrl = videoUrl, onBack = { navController.popBackStack() })
+    }
 }

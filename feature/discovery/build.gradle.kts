@@ -64,7 +64,15 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.runtime.android)
+    implementation(libs.androidx.material3.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation (libs.exoplayer)
+    implementation (libs.androidx.material3.v120)
+
+
 }

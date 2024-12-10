@@ -1,33 +1,54 @@
 package com.mck.discovery
-
+import android.net.Uri
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Scaffold
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.TextField
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import kotlinx.coroutines.launch
 
-import com.mck.composable.TopBar
-import com.mck.theme.R
-
-
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DiscoveryScreen(navController: NavController) {
-    Scaffold(topBar = {
-        TopBar(
-            navIcon = null,
-            title = stringResource(id = R.string.discovery)
+    var searchText by remember { mutableStateOf("") }
+    var videoList by remember { mutableStateOf<List<Video>>(emptyList()) }
+    val coroutineScope = rememberCoroutineScope()
+    val videoRepository = VideoRepository()
+
+    Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+        // Search bar
+        TextField(
+            value = searchText,
+            onValueChange = { searchText = it },
+            placeholder = { Text("Search by tag") },
+            modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp)
         )
-    }) {
-        Column(
-            modifier = Modifier
-                .padding(it)
-                .fillMaxSize()
+
+        // Search button
+        Button(
+            onClick = {
+                coroutineScope.launch {
+                    videoList = videoRepository.fetchVideosByTag(searchText)
+                }
+            },
+            modifier = Modifier.fillMaxWidth()
         ) {
-            Text("Discovery Screen")
+            Text("Search")
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // List of videos
+        LazyColumn {
+            items(videoList) { video ->
+                VideoItem(video = video, onVideoClick = { url ->
+                    navController.navigate("videoPlayer/${Uri.encode(url)}")
+                })
+            }
         }
     }
 }
