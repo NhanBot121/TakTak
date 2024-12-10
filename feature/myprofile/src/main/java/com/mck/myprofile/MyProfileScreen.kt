@@ -77,3 +77,16 @@ fun ProfileScreen(navController: NavHostController){
         composable (route = "edit_profile") {EditProfileScreen(userViewModel, navController = profileNavController)}
     }
 }
+
+//@Composable
+//fun ProfileSCreen(){
+//    val profileNavController = rememberNavController()
+//    NavHost(navController = profileNavController, startDestination = "login") {
+//        // Define your composables here with correct navigation
+//        composable("login") {
+//            LoginScreen(navController = profileNavController)
+//        }
+//        composable("signup") { SignUpScreen(navController = profileNavController) }
+//        composable("profile") { UserProfileScreen(navController = profileNavController) }
+//    }
+//}

@@ -31,14 +31,14 @@ import androidx.compose.ui.unit.dp
 import androidx.media3.common.util.UnstableApi
 import com.mck.data.model.VideoRepository
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.mck.data.model.VideoDetails
 
 @ExperimentalMaterial3Api
 @OptIn(UnstableApi::class)
 @Composable
 fun VideoScreen(
-    navController: NavController,
+    navController: NavHostController,
     userId: String = "video",
     index: Int = 0
 ) {

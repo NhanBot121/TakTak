@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
@@ -15,7 +16,7 @@ import com.mck.core.DestinationRoute.PassedKey.USER_ID
 import com.mck.core.DestinationRoute.PassedKey.VIDEO_INDEX
 
 @OptIn(ExperimentalMaterial3Api::class)
-fun NavGraphBuilder.homeNavGraph(navController: NavController) {
+fun NavGraphBuilder.homeNavGraph(navController: NavHostController) {
     composable(route = HOME_SCREEN_ROUTE) {
 
         VideoScreen(navController)
