@@ -55,7 +55,7 @@ fun VideoScreen(
     // Use VerticalPager instead of LazyColumn
     if (videos.isNotEmpty()) {
         val pagerState = rememberPagerState(
-            initialPage = 0, //index,
+            initialPage = index,
             initialPageOffsetFraction = 0F,
             pageCount = { videos.size }
         )
