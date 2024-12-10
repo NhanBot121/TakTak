@@ -51,6 +51,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
 import com.mck.data.model.VideoRepository
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.mck.data.model.VideoDetails
 import kotlinx.coroutines.launch
 
@@ -58,6 +59,9 @@ import kotlinx.coroutines.launch
 @OptIn(UnstableApi::class)
 @Composable
 fun VideoScreen(
+    navController: NavController,
+    userId: String = "video",
+    index: Int = 0
 ) {
     val viewModelFactory = HomeViewModel.provideFactory( VideoRepository())
     val viewModel: HomeViewModel = viewModel(factory = viewModelFactory)
@@ -66,13 +70,13 @@ fun VideoScreen(
     var isPlayingIndex by remember { mutableIntStateOf(-1) }
 
     LaunchedEffect(Unit) {
-        viewModel.getVideos()
+        viewModel.getVideos(userId)
     }
 
     // Use VerticalPager instead of LazyColumn
     if (videos.isNotEmpty()) {
         val pagerState = rememberPagerState(
-            initialPage = 0,
+            initialPage = 0, //index,
             initialPageOffsetFraction = 0F,
             pageCount = { videos.size }
         )

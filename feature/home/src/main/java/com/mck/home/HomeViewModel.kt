@@ -31,9 +31,9 @@ class HomeViewModel(
 
 
 
-    fun getVideos() {
+    fun getVideos(userId: String) {
         viewModelScope.launch {
-            _videoLiveData.value = homeVideoRepository.getVideoDetails()
+            _videoLiveData.value = homeVideoRepository.getVideoDetails(userId)
         }
     }
 
