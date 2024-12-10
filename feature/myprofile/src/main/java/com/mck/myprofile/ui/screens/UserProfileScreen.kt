@@ -1,5 +1,6 @@
 package com.mck.myprofile.ui.screens
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -29,6 +30,7 @@ import com.mck.myprofile.user.User
 import com.mck.myprofile.user.UserViewModel
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
+import com.mck.core.DestinationRoute.HOME_SCREEN_ROUTE
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -179,20 +181,20 @@ fun UserProfileScreen(viewModel: UserViewModel, navController: NavHostController
                                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                                 verticalArrangement = Arrangement.spacedBy(8.dp)
                             ) {
-                                items(it.videoThumbnailUrls) { thumbnailUrl ->
+                                items(it.videoThumbnailUrls.size) { thumbnailUrl ->
                                     // Ảnh thumbnail
-                                    if (thumbnailUrl.isNotEmpty()) {
+                                    //if (thumbnailUrl.isNotEmpty()) {
                                         Image(
-                                            painter = rememberImagePainter(thumbnailUrl),
+                                            painter = rememberImagePainter(it.videoThumbnailUrls[thumbnailUrl]),
                                             contentDescription = "Video Thumbnail",
                                             modifier = Modifier
                                                 .size(120.dp)
                                                 .border(1.dp, Color.Gray)
                                                 .clickable {
-                                                    // Bạn có thể thêm logic để điều hướng hoặc phát video khi nhấn vào thumbnail
+                                                    Log.d("MyProfileScreen", "Navigate to Home Screen")
+                                                    navController.navigate("$HOME_SCREEN_ROUTE/${it.id}/$thumbnailUrl")
                                                 }
                                         )
-                                    }
                                 }
                             }
                         } else {

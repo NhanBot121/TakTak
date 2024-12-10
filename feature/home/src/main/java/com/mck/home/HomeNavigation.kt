@@ -12,6 +12,5 @@ fun NavGraphBuilder.homeNavGraph(navController: NavController) {
     composable(route = HOME_SCREEN_ROUTE) {
         //HomeScreen(navController)
         VideoScreen()
-
     }
 }
