@@ -31,7 +31,7 @@ import androidx.navigation.NavHostController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: NavHostController) {
+fun UserProfileScreen(viewModel: UserViewModel, navController: NavHostController) {
     // Lấy thông tin người dùng từ Firebase
     var user by remember { mutableStateOf<User?>(null) }
     var isLoading by remember { mutableStateOf(true) }
@@ -203,10 +203,4 @@ fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: Nav
             }
         }
     )
-}
-
-@Preview
-@Composable
-fun UserProfileScreenPreview() {
-    UserProfileScreen(navController = NavHostController(LocalContext.current))
 }

@@ -1,13 +1,23 @@
 package com.mck.myprofile.user.data
+import android.content.Context
+import android.content.SharedPreferences
 import com.mck.myprofile.user.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
 
-class UserRepository {
+class UserRepository(private val _context: Context) {
 
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+    private val _sharedPreference: SharedPreferences = _context.getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
+
+    fun saveLoginStatus(isLoggedin: Boolean){
+        _sharedPreference.edit().putBoolean("isLoggedin", isLoggedin).apply()
+    }
+    fun isUserLoggedin() : Boolean{
+        return _sharedPreference.getBoolean("isLoggedIn", false)
+    }
 
     // Đăng ký người dùng
     suspend fun registerUser(email: String, password: String): Boolean {
