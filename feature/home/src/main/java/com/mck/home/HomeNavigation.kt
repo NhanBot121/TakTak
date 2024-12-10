@@ -1,5 +1,6 @@
 package com.mck.home
 
+import android.util.Log
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
@@ -16,7 +17,7 @@ import com.mck.core.DestinationRoute.PassedKey.VIDEO_INDEX
 @OptIn(ExperimentalMaterial3Api::class)
 fun NavGraphBuilder.homeNavGraph(navController: NavController) {
     composable(route = HOME_SCREEN_ROUTE) {
-        //HomeScreen(navController)
+
         VideoScreen(navController)
     }
 
@@ -26,13 +27,12 @@ fun NavGraphBuilder.homeNavGraph(navController: NavController) {
             navArgument("index") { type = NavType.IntType }
         )
         ) {
-        backstackEntry -> val userId = backstackEntry.arguments?.getString(USER_ID)
-        val videoIndex = backstackEntry.arguments?.getInt(VIDEO_INDEX)
+        backstackEntry -> val userId = backstackEntry.arguments?.getString("userId")
+        val videoIndex = backstackEntry.arguments?.getInt("index")
+        Log.d("HomeScreen", "userId: $userId, videoIndex: $videoIndex")
         if (userId != null && videoIndex != null) {
-                VideoScreen(navController)
+                VideoScreen(navController, userId, videoIndex)
         }
-
-        //VideoScreen(navController)
 
     }
 }
