@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
@@ -58,8 +59,11 @@ fun UserProfileScreen(viewModel: UserViewModel, navController: NavHostController
                 },
                 actions = {
                     // Thêm biểu tượng nếu cần
-                    IconButton(onClick = { /* Handle settings */ }) {
-                        Icon(imageVector = Icons.Default.Settings, contentDescription = "Settings")
+                    IconButton(onClick = {
+                        viewModel.logout()
+                        navController.navigate("login") { popUpTo("login") { inclusive = true } }
+                    }) {
+                        Icon(imageVector = Icons.Default.Settings, contentDescription = "Log Out")
                     }
                 }
             )
@@ -129,7 +133,7 @@ fun UserProfileScreen(viewModel: UserViewModel, navController: NavHostController
                         Spacer(modifier = Modifier.height(16.dp))
 
                         // Nút Chỉnh sửa hồ sơ
-                        Button(
+                        OutlinedButton(
                             onClick = {
                                 // Điều hướng tới màn hình chỉnh sửa hồ sơ
                                 navController.navigate("editProfile")
@@ -137,6 +141,11 @@ fun UserProfileScreen(viewModel: UserViewModel, navController: NavHostController
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(horizontal = 16.dp)
+                                .height(50.dp), // Điều chỉnh chiều cao để giống hình ảnh
+                            shape = MaterialTheme.shapes.medium, // Góc bo tròn
+                            colors = ButtonDefaults.outlinedButtonColors(
+                                contentColor = MaterialTheme.colorScheme.primary
+                            )
                         ) {
                             Text("Edit Profile")
                         }
