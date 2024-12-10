@@ -41,7 +41,6 @@ import com.mck.myprofile.user.UserViewModel
 import com.mck.myprofile.user.data.UserRepository
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyProfileScreen(navController: NavHostController) {
     Scaffold(topBar = {
@@ -57,8 +56,11 @@ fun MyProfileScreen(navController: NavHostController) {
 @SuppressLint("UnrememberedGetBackStackEntry")
 @Composable
 fun ProfileScreen(navControllerMulti: NavHostController){
-    val activity = LocalContext.current as ComponentActivity
+    /**
+     * NavHost of */
     val profileNavController = rememberNavController()
+
+    val activity = LocalContext.current as ComponentActivity
     val context = LocalContext.current
     val userRepository = remember{ UserRepository(context) }
     val userFactory = remember{ UserFactory(userRepository) }
