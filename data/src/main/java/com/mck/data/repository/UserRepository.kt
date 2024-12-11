@@ -14,7 +14,7 @@ class UserRepository(private val _context: Context) {
     private val _sharedPreference: SharedPreferences = _context.getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
 
     fun saveLoginStatus(isLoggedin: Boolean){
-        _sharedPreference.edit().putBoolean("isLoggedin", isLoggedin).apply()
+        _sharedPreference.edit().putBoolean("isLoggedIn", isLoggedin).apply()
     }
     fun isUserLoggedin() : Boolean{
         return _sharedPreference.getBoolean("isLoggedIn", false)
