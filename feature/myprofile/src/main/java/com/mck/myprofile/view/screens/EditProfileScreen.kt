@@ -1,33 +1,25 @@
-package com.mck.myprofile.ui.screens
+package com.mck.myprofile.view.screens
 
-import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.text.input.ImeAction
 import androidx.navigation.NavController
-import com.mck.myprofile.user.User
-import com.mck.myprofile.user.UserViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
+import com.mck.data.model.UserModel
+import com.mck.myprofile.viewmodel.UserViewModel
 import coil.compose.rememberImagePainter
 
 @Composable
 fun EditProfileScreen(
     viewModel: UserViewModel,
-    navController: NavController
+    navController: NavHostController
 ) {
     // Lấy thông tin người dùng từ Firestore
-    var user by remember { mutableStateOf<User?>(null) }
+    var user by remember { mutableStateOf<UserModel?>(null) }
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var profileImageUrl by remember { mutableStateOf("") }

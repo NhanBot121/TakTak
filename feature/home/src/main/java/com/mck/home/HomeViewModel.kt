@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.mck.data.model.VideoDetails
-import com.mck.data.model.VideoRepository
+import com.mck.data.repository.VideoRepository
 import kotlinx.coroutines.launch
 
 sealed interface HomeUiState {

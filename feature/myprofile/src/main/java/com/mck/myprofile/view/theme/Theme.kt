@@ -1,12 +1,11 @@
-package com.mck.myprofile.ui.theme
+package com.mck.myprofile.view.theme
 
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.graphics.Color
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.material3.darkColorScheme
-import androidx.navigation.NavController
+
 //import com.example.profile.ui.components.UserForm
 
 // Màu sắc cho theme sáng

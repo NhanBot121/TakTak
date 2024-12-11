@@ -1,9 +1,9 @@
-package com.mck.myprofile.user.data
+package com.mck.myprofile
 import android.content.Context
 import android.content.SharedPreferences
-import com.mck.myprofile.user.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.mck.data.model.UserModel
 import kotlinx.coroutines.tasks.await
 
 class UserRepository(private val _context: Context) {
@@ -24,7 +24,7 @@ class UserRepository(private val _context: Context) {
         return try {
             val authResult = auth.createUserWithEmailAndPassword(email, password).await()
             authResult.user?.let {
-                val user = User(id = it.uid, email = email)
+                val user = UserModel(id = it.uid, email = email)
                 saveUserToFirestore(user)
             }
             true
@@ -44,7 +44,7 @@ class UserRepository(private val _context: Context) {
     }
 
     // Lưu thông tin người dùng vào Firestore
-    suspend fun saveUserToFirestore(user: User): Boolean {
+    private suspend fun saveUserToFirestore(user: UserModel): Boolean {
         return try {
             firestore.collection("users").document(user.id).set(user).await()
             true
@@ -54,10 +54,10 @@ class UserRepository(private val _context: Context) {
     }
 
     // Lấy thông tin người dùng từ Firestore
-    suspend fun getUserFromFirestore(userId: String): User? {
+    suspend fun getUserFromFirestore(userId: String): UserModel? {
         return try {
             val doc = firestore.collection("users").document(userId).get().await()
-            doc.toObject(User::class.java)
+            doc.toObject(UserModel::class.java)
         } catch (e: Exception) {
             null
         }

@@ -1,26 +1,26 @@
-package com.mck.myprofile.user
+package com.mck.myprofile.viewmodel
 
-import android.annotation.SuppressLint
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mck.myprofile.user.data.UserRepository
+import com.mck.myprofile.UserRepository
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.mck.data.model.UserModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
 class UserViewModel(private val _userRepository: UserRepository) : ViewModel() {
 
-    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
-    private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+    private val _firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+    //private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
 
     private val _isLoggedIn = MutableLiveData<Boolean>(false)
         val isLoggedIn: LiveData<Boolean> get() = _isLoggedIn
 
     init {
+        // get the status of log in at the beggining
         _isLoggedIn.value = _userRepository.isUserLoggedin()
     }
 
@@ -40,12 +40,13 @@ class UserViewModel(private val _userRepository: UserRepository) : ViewModel() {
         }
     }
 
-    // Đăng nhập người dùng
+    // Log in
     fun loginUser(email: String, password: String, onResult: (Boolean, String) -> Unit) {
         viewModelScope.launch {
             try {
                 val success = _userRepository.loginUser(email, password)
                 if (success) {
+                    //update the status of log in
                     _isLoggedIn.postValue(true)
                     _userRepository.saveLoginStatus(true)
                     onResult(true, "Login successful")
@@ -58,9 +59,9 @@ class UserViewModel(private val _userRepository: UserRepository) : ViewModel() {
         }
     }
 
-    // Lấy thông tin người dùng từ Firestore
-    fun getUserInfo(onResult: (User?) -> Unit) {
-        val userId = firebaseAuth.currentUser?.uid
+    // get user inf from Firestore
+    fun getUserInfo(onResult: (UserModel?) -> Unit) {
+        val userId = _firebaseAuth.currentUser?.uid
         if (userId != null) {
             viewModelScope.launch {
                 try {
@@ -76,8 +77,6 @@ class UserViewModel(private val _userRepository: UserRepository) : ViewModel() {
     }
 
     // Cập nhật thông tin người dùng
-    // UserViewModel
-    // UserViewModel
     fun updateUserProfile(
         name: String,
         email: String,
@@ -125,7 +124,7 @@ class UserViewModel(private val _userRepository: UserRepository) : ViewModel() {
     fun logout() {
         viewModelScope.launch {
             try {
-                firebaseAuth.signOut()
+                _firebaseAuth.signOut()
                 _isLoggedIn.postValue(false)
                 _userRepository.saveLoginStatus(false)
             } catch (e: Exception) {

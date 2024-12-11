@@ -1,4 +1,4 @@
-package com.mck.myprofile.ui.theme
+package com.mck.myprofile.view.theme
 
 import androidx.compose.ui.graphics.Color
 

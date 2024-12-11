@@ -1,18 +1,14 @@
-package com.mck.myprofile.ui.screens
+package com.mck.myprofile.view.screens
 
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
@@ -21,26 +17,22 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
-import com.mck.myprofile.user.User
-import com.mck.myprofile.user.UserViewModel
-import androidx.compose.ui.platform.LocalContext
+import com.mck.data.model.UserModel
+import com.mck.myprofile.viewmodel.UserViewModel
 import androidx.navigation.NavHostController
 import com.mck.core.DestinationRoute.HOME_SCREEN_ROUTE
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserProfileScreen(viewModel: UserViewModel, navController: NavHostController, navControlMulti: NavHostController) {
-    // Lấy thông tin người dùng từ Firebase
-    var user by remember { mutableStateOf<User?>(null) }
+    // get user info from Firebase
+    var user by remember { mutableStateOf<UserModel?>(null) }
     var isLoading by remember { mutableStateOf(true) }
     var errorMessage by remember { mutableStateOf("") }
 
-    // Lấy thông tin người dùng từ Firestore
+    // get user info from Firebase
     LaunchedEffect(Unit) {
         viewModel.getUserInfo { fetchedUser ->
             if (fetchedUser != null) {
@@ -60,7 +52,6 @@ fun UserProfileScreen(viewModel: UserViewModel, navController: NavHostController
                     Text(text = "User Profile", style = MaterialTheme.typography.titleLarge)
                 },
                 actions = {
-                    // Thêm biểu tượng nếu cần
                     IconButton(onClick = {
                         viewModel.logout()
                         navController.navigate("login") { popUpTo("login") { inclusive = true } }
@@ -138,7 +129,7 @@ fun UserProfileScreen(viewModel: UserViewModel, navController: NavHostController
                         OutlinedButton(
                             onClick = {
                                 // Điều hướng tới màn hình chỉnh sửa hồ sơ
-                                navController.navigate("editProfile")
+                                navController.navigate("edit_profile")
                             },
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -154,7 +145,7 @@ fun UserProfileScreen(viewModel: UserViewModel, navController: NavHostController
 
                         Spacer(modifier = Modifier.height(8.dp))
 
-                        // Nút Đăng xuất
+                        // sign out to login screen
                         Button(
                             onClick = {
                                 viewModel.logout()

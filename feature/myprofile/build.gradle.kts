@@ -49,6 +49,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":common:composable"))
     implementation(project(":common:theme"))
+    implementation(project(":data"))
 
     implementation (libs.androidx.emoji2)
 

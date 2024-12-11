@@ -1,8 +1,9 @@
-package com.mck.data.model
+package com.mck.data.repository
 
 import android.util.Log
 import com.mck.data.model.VideoDetails
 import com.google.firebase.firestore.FirebaseFirestore
+import com.mck.data.model.Comment
 import kotlinx.coroutines.tasks.await
 
 class VideoRepository {

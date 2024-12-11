@@ -1,4 +1,4 @@
-package com.mck.myprofile.ui.screens
+package com.mck.myprofile.view.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -6,18 +6,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import com.mck.myprofile.user.UserViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
+import com.mck.myprofile.viewmodel.UserViewModel
 
 @Composable
-fun SignUpScreen(viewModel: UserViewModel, navController: NavHostController) {
+fun LoginScreen(viewModel: UserViewModel, navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    var confirmPassword by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf("") }
 
@@ -28,17 +24,18 @@ fun SignUpScreen(viewModel: UserViewModel, navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text = "Sign Up", style = MaterialTheme.typography.headlineMedium)
+        Text(text = "Login", style = MaterialTheme.typography.headlineMedium)
 
+        //email
         TextField(
             value = email,
             onValueChange = { email = it },
             label = { Text("Email") },
             modifier = Modifier.fillMaxWidth()
         )
-
         Spacer(modifier = Modifier.height(8.dp))
 
+        //password
         TextField(
             value = password,
             onValueChange = { password = it },
@@ -46,36 +43,21 @@ fun SignUpScreen(viewModel: UserViewModel, navController: NavHostController) {
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.fillMaxWidth()
         )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        TextField(
-            value = confirmPassword,
-            onValueChange = { confirmPassword = it },
-            label = { Text("Confirm Password") },
-            visualTransformation = PasswordVisualTransformation(),
-            modifier = Modifier.fillMaxWidth()
-        )
-
         Spacer(modifier = Modifier.height(16.dp))
 
         if (errorMessage.isNotEmpty()) {
             Text(text = errorMessage, color = MaterialTheme.colorScheme.error)
         }
 
+
         Button(
             onClick = {
-                if (password != confirmPassword) {
-                    errorMessage = "Passwords do not match"
-                    return@Button
-                }
-
                 isLoading = true
-                viewModel.registerUser(email, password) { success, message ->
+                viewModel.loginUser(email, password) { success, message ->
                     isLoading = false
                     errorMessage = message
                     if (success) {
-                        // Navigate to User Profile or Home
+                        // Navigate to User Profile
                         navController.navigate("profile")
                     }
                 }
@@ -86,14 +68,13 @@ fun SignUpScreen(viewModel: UserViewModel, navController: NavHostController) {
             if (isLoading) {
                 CircularProgressIndicator(modifier = Modifier.size(20.dp))
             } else {
-                Text("Sign Up")
+                Text("Login")
             }
         }
-
         Spacer(modifier = Modifier.height(16.dp))
 
-        TextButton(onClick = { navController.navigate("login") }) {
-            Text(text = "Already have an account? Login")
+        TextButton(onClick = { navController.navigate("signup") }) {
+            Text(text = "Don't have an account? Sign up")
         }
     }
 }
