@@ -46,7 +46,7 @@ fun RowScope.BottomItem(
         it.route == screen.route
     } == true
 
-    val (iconSize, offsetY) = if (screen == BottomBarDestination.ADD) Pair(44.dp, (-4).dp)
+    val (iconSize, offsetY) = if (screen == BottomBarDestination.ADD) Pair(44.dp, (0).dp)
     else Pair(22.dp, (0).dp)
 
     var icon: Int = screen.unFilledIcon
