@@ -11,7 +11,6 @@ data class ViewState(
 
 sealed class CameraMediaEvent {
     object EventFetchTemplate : CameraMediaEvent()
-
 }
 
 enum class Tabs(@StringRes val rawValue: Int) {

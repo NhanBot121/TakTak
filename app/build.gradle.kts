@@ -15,9 +15,9 @@ android {
     compileSdk = 34
 
 
-    fun Packaging.() {
-        resources.excludes.add("META-INF/**/*")
-    }
+//    fun Packaging.() {
+//        resources.excludes.add("META-INF/**/*")
+//    }
 
     defaultConfig {
         applicationId = "com.mck.taktak"
@@ -103,7 +103,9 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
 
     // Accompanist Navigation Material (for BottomSheet support)
-    implementation(libs.accompanist.navigation.material)
+//    implementation(libs.accompanist.navigation.material)
+
+//    implementation(libs.material.navigation)
 
     // Accompanist System UI Controller (for handling system UI like status bar)
     implementation(libs.accompanist.systemuicontroller)

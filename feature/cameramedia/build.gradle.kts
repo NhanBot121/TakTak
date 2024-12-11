@@ -2,10 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-
-
     id("org.jetbrains.kotlin.kapt")
-
 }
 
 android {
@@ -73,14 +70,14 @@ dependencies {
 
     // accompanist navigation
     implementation(libs.accompanist.permissions)
-    implementation(libs.accompanist.navigation.material)
+//    implementation(libs.accompanist.navigation.material)
 
     // Jetpack Compose
     implementation (libs.ui) // Core Compose UI
     implementation (libs.material3) // Material 3 components
 
 //    implementation (libs.androidx.foundation )// Foundation components
-    implementation(libs.androidx.foundation.v168)
+    implementation(libs.androidx.foundation)
 
 
 //    implementation (libs.androidx.foundation.layout) // Layout components
