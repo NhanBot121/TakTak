@@ -1,4 +1,5 @@
-package com.mck.myprofile
+package com.mck.data.repository
+
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.firebase.auth.FirebaseAuth

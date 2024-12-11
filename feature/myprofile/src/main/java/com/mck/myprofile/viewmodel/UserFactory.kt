@@ -2,7 +2,7 @@ package com.mck.myprofile.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.mck.myprofile.UserRepository
+import com.mck.data.repository.UserRepository
 
 class UserFactory(private val _repository: UserRepository) : ViewModelProvider.Factory {
     @Suppress("UNCHECKED_CAST")
