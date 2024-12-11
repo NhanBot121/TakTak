@@ -41,4 +41,6 @@ class VideoRepository {
         val videoRef = firestore.collection(user).document("video$videoId")
         videoRef.update("like", like).await()
     }
+
+
 }

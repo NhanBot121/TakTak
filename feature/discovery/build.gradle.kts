@@ -65,14 +65,19 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.firebase.firestore.ktx)
-    implementation(libs.androidx.media3.exoplayer)
     implementation(libs.androidx.runtime.android)
     implementation(libs.androidx.material3.android)
+    implementation(project(":data"))
+    implementation(project(":data"))
+    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.androidx.media3.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (libs.exoplayer)
-    implementation (libs.androidx.material3.v120)
-
+    implementation ("androidx.media3:media3-exoplayer: 1.4.0")
+    implementation ("androidx.media3:media3-exoplayer-dash: 1.4.0")
+    implementation ("androidx.media3:media3-ui:1.4.0")
+    implementation("androidx.compose.material3:material3:1.3.1")
 
 }
