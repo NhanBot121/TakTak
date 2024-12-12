@@ -78,42 +78,6 @@ fun EditProfileScreen(
         )
         Spacer(modifier = Modifier.height(8.dp))
 
-        // Nhập URL ảnh đại diện
-        OutlinedTextField(
-            value = profileImageUrl,
-            onValueChange = { profileImageUrl = it },
-            label = { Text("Profile Image URL") },
-            modifier = Modifier.fillMaxWidth()
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-
-        // Nhập "Following" (tùy chọn)
-        OutlinedTextField(
-            value = following.toString(),
-            onValueChange = { following = it.toIntOrNull() ?: 0 },
-            label = { Text("Following") },
-            modifier = Modifier.fillMaxWidth()
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-
-        // Nhập "Followers" (tùy chọn)
-        OutlinedTextField(
-            value = followers.toString(),
-            onValueChange = { followers = it.toIntOrNull() ?: 0 },
-            label = { Text("Followers") },
-            modifier = Modifier.fillMaxWidth()
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-
-        // Nhập "Likes" (tùy chọn)
-        OutlinedTextField(
-            value = likes.toString(),
-            onValueChange = { likes = it.toIntOrNull() ?: 0 },
-            label = { Text("Likes") },
-            modifier = Modifier.fillMaxWidth()
-        )
-        Spacer(modifier = Modifier.height(16.dp))
-
         // Hiển thị ảnh đại diện hiện tại nếu có
         if (user?.profileImageUrl?.isNotEmpty() == true) {
             val imagePainter = rememberImagePainter(user?.profileImageUrl)

@@ -1,10 +1,12 @@
 package com.mck.myprofile.view.screens
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import com.mck.myprofile.viewmodel.UserViewModel
@@ -17,6 +19,7 @@ fun SignUpScreen(viewModel: UserViewModel, navController: NavHostController) {
     var confirmPassword by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }
     var errorMessage by remember { mutableStateOf("") }
+    val context = LocalContext.current
 
     Column(
         modifier = Modifier
@@ -76,7 +79,8 @@ fun SignUpScreen(viewModel: UserViewModel, navController: NavHostController) {
                     errorMessage = message
                     if (success) {
                         // Navigate to User Profile or Home
-                        navController.navigate("profile")
+                        Toast.makeText(context, "Sign up successfully", Toast.LENGTH_SHORT).show()
+                        navController.navigate("login")
                     }
                 }
             },
