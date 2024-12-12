@@ -1,5 +1,6 @@
 package com.mck.home
 
+import android.util.Log
 import androidx.annotation.OptIn
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -107,7 +108,8 @@ fun VideoScreen(
                     InteractButtons(
                         video = video,
                         onAvatarClicked = {
-                            navController.navigate("profile/${video.userId}")
+                            //navController.navigate("profile/${video.userId}")
+                            Log.d("VideoScreen", "${video.author.profileImageUrl} and ${video.author.name}")
                         },
                         viewModel = viewModel,
                         pageIndex = pageIndex,

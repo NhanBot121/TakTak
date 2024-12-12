@@ -1,5 +1,7 @@
 package com.mck.data.model
 
+
+
 data class VideoDetails(
     //val authorDetails: UserModel,
     val videoLink: String,
@@ -9,6 +11,7 @@ data class VideoDetails(
     var share: Int = 0,
     val userId: String,
     var isLiked: Boolean = false,
+    var author: User = User(),
     var isLikedBy: List<String> = emptyList(),
     val comments: List<Comment> = emptyList()
 
