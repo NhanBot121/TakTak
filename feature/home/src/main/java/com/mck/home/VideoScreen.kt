@@ -40,6 +40,7 @@ import com.mck.data.model.VideoDetails
 @Composable
 fun VideoScreen(
     navController: NavHostController,
+
     userId: String = "video",
     index: Int = 0
 ) {

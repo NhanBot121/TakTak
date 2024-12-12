@@ -4,7 +4,7 @@ data class VideoDetails(
     //val authorDetails: UserModel,
     val videoLink: String,
     val description: String,
-    val userId: String,
+    val userId: String = "",
     var like: Int = 0,
     var comment: Int = 0,
     var share: Int = 0,

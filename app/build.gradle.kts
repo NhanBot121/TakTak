@@ -68,7 +68,7 @@ dependencies {
     implementation(project(":feature:home"))
     implementation(project(":feature:inbox"))
     implementation(project(":feature:myprofile"))
-    implementation(project(":feature:cameramedia"))
+//    implementation(project(":feature:cameramedia"))
 
 //    implementation (libs.play.services)
 

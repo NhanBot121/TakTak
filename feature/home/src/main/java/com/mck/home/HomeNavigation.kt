@@ -17,6 +17,7 @@ import com.mck.core.DestinationRoute.PassedKey.VIDEO_INDEX
 
 @OptIn(ExperimentalMaterial3Api::class)
 fun NavGraphBuilder.homeNavGraph(navController: NavHostController) {
+
     composable(route = HOME_SCREEN_ROUTE) {
 
         VideoScreen(navController)

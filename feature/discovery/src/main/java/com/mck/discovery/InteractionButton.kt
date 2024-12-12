@@ -1,12 +1,17 @@
 package com.mck.discovery
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -18,8 +23,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberAsyncImagePainter
 import com.mck.data.model.VideoDetails
 import com.mck.discovery.model.HomeViewModel
 
@@ -40,14 +47,28 @@ fun InteractButtons(
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(
-            text = "User profile",
-            color = Color.White,
-            style = MaterialTheme.typography.bodySmall,
-            modifier = Modifier
-                .padding(bottom = 16.dp)
-                .clickable { onAvatarClicked() }
-        )
+        val imagePainter = rememberAsyncImagePainter(video.author.profileImageUrl)
+        if (video.author.profileImageUrl.isNotEmpty()) {
+            Image(
+                painter = imagePainter,
+                contentDescription = "Profile Image",
+                modifier = Modifier
+                    .size(60.dp)
+                    .clip(CircleShape)
+                    .border(2.dp, Color.Gray, CircleShape)
+                    .clickable { onAvatarClicked() }
+            )
+        } else {
+            Icon(
+                imageVector = Icons.Default.Person,
+                contentDescription = "Profile Image",
+                modifier = Modifier
+                    .size(60.dp)
+                    .clip(CircleShape)
+                    .border(2.dp, Color.Gray, CircleShape)
+                    .clickable { onAvatarClicked() }
+            )
+        }
 
         // Like Button
         IconButton(onClick = {

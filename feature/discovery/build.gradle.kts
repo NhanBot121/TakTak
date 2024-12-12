@@ -59,7 +59,7 @@ dependencies {
     implementation (libs.androidx.runtime) // Compose runtime
     implementation (libs.androidx.ui.text )// For text-related components like ClickableText
     implementation (libs.androidx.navigation.compose) // For navigation with Compose
-
+    implementation (libs.coil.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

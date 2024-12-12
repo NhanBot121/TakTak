@@ -8,7 +8,7 @@ import com.mck.discovery.discoveryNavGraph
 import com.mck.home.homeNavGraph
 import com.mck.inbox.inboxNavGraph
 import com.mck.myprofile.myProfileNavGraph
-import com.mck.cameramedia.cameraMediaNavGraph
+//import com.mck.cameramedia.cameraMediaNavGraph
 
 import com.mck.core.DestinationRoute.HOME_SCREEN_ROUTE
 
@@ -32,6 +32,6 @@ fun AppNavHost(
 //        loginEmailPhoneNavGraph(navController)
         myProfileNavGraph(navController)
 //        settingNavGraph(navController)
-        cameraMediaNavGraph(navController)
+       // cameraMediaNavGraph(navController)
     }
 }
