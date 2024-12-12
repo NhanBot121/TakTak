@@ -34,12 +34,12 @@ fun InteractButtons(
     val like = remember { mutableIntStateOf(video.like) }
     Column(
         modifier = Modifier
-            .padding(16.dp),
+            .padding(10.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "User profile",
+            text = video.userId,
             color = Color.White,
             style = MaterialTheme.typography.bodySmall,
             modifier = Modifier
@@ -52,12 +52,12 @@ fun InteractButtons(
             if(!video.isLiked){
                 like.intValue = video.like + 1
                 video.like = like.intValue
-                viewModel.updateLike(like.intValue, pageIndex, "video")
+                viewModel.updateLike(like.intValue, pageIndex, video.userId)
                 video.isLiked = true
             } else {
                 like.intValue = video.like - 1
                 video.like = like.intValue
-                viewModel.updateLike(like.intValue, pageIndex, "video")
+                viewModel.updateLike(like.intValue, pageIndex, video.userId)
                 video.isLiked = false
             }
 

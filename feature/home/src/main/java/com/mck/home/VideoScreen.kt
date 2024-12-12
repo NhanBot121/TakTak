@@ -106,7 +106,9 @@ fun VideoScreen(
                 ) {
                     InteractButtons(
                         video = video,
-                        onAvatarClicked = {},
+                        onAvatarClicked = {
+                            navController.navigate("profile/${video.userId}")
+                        },
                         viewModel = viewModel,
                         pageIndex = pageIndex,
                         onCommentClicked = {showBottomSheet = true},
