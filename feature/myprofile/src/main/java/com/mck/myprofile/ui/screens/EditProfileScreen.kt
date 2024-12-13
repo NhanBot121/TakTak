@@ -23,7 +23,7 @@ import coil.compose.rememberImagePainter
 
 @Composable
 fun EditProfileScreen(
-    viewModel: UserViewModel = viewModel(),
+    viewModel: UserViewModel,
     navController: NavController
 ) {
     // Lấy thông tin người dùng từ Firestore
@@ -155,10 +155,4 @@ fun EditProfileScreen(
             CircularProgressIndicator()
         }
     }
-}
-
-@Preview
-@Composable
-fun EditProfileScreenPreview() {
-    EditProfileScreen(navController = NavController(LocalContext.current))
 }

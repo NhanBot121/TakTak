@@ -13,7 +13,7 @@ import androidx.navigation.NavHostController
 import com.mck.myprofile.user.UserViewModel
 
 @Composable
-fun LoginScreen(viewModel: UserViewModel = viewModel(), navController: NavHostController) {
+fun LoginScreen(viewModel: UserViewModel, navController: NavHostController) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }

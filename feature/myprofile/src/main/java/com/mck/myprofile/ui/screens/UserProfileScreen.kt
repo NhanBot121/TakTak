@@ -1,5 +1,6 @@
 package com.mck.myprofile.ui.screens
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -11,6 +12,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
@@ -28,10 +30,11 @@ import com.mck.myprofile.user.User
 import com.mck.myprofile.user.UserViewModel
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
+import com.mck.core.DestinationRoute.HOME_SCREEN_ROUTE
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: NavHostController) {
+fun UserProfileScreen(viewModel: UserViewModel, navController: NavHostController, navControlMulti: NavHostController) {
     // Lấy thông tin người dùng từ Firebase
     var user by remember { mutableStateOf<User?>(null) }
     var isLoading by remember { mutableStateOf(true) }
@@ -58,8 +61,11 @@ fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: Nav
                 },
                 actions = {
                     // Thêm biểu tượng nếu cần
-                    IconButton(onClick = { /* Handle settings */ }) {
-                        Icon(imageVector = Icons.Default.Settings, contentDescription = "Settings")
+                    IconButton(onClick = {
+                        viewModel.logout()
+                        navController.navigate("login") { popUpTo("login") { inclusive = true } }
+                    }) {
+                        Icon(imageVector = Icons.Default.Settings, contentDescription = "Log Out")
                     }
                 }
             )
@@ -129,7 +135,7 @@ fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: Nav
                         Spacer(modifier = Modifier.height(16.dp))
 
                         // Nút Chỉnh sửa hồ sơ
-                        Button(
+                        OutlinedButton(
                             onClick = {
                                 // Điều hướng tới màn hình chỉnh sửa hồ sơ
                                 navController.navigate("editProfile")
@@ -137,6 +143,11 @@ fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: Nav
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(horizontal = 16.dp)
+                                .height(50.dp), // Điều chỉnh chiều cao để giống hình ảnh
+                            shape = MaterialTheme.shapes.medium, // Góc bo tròn
+                            colors = ButtonDefaults.outlinedButtonColors(
+                                contentColor = MaterialTheme.colorScheme.primary
+                            )
                         ) {
                             Text("Edit Profile")
                         }
@@ -170,20 +181,20 @@ fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: Nav
                                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                                 verticalArrangement = Arrangement.spacedBy(8.dp)
                             ) {
-                                items(it.videoThumbnailUrls) { thumbnailUrl ->
+                                items(it.videoThumbnailUrls.size) { thumbnailUrl ->
                                     // Ảnh thumbnail
-                                    if (thumbnailUrl.isNotEmpty()) {
-                                        Image(
-                                            painter = rememberImagePainter(thumbnailUrl),
-                                            contentDescription = "Video Thumbnail",
-                                            modifier = Modifier
-                                                .size(120.dp)
-                                                .border(1.dp, Color.Gray)
-                                                .clickable {
-                                                    // Bạn có thể thêm logic để điều hướng hoặc phát video khi nhấn vào thumbnail
-                                                }
-                                        )
-                                    }
+                                    //if (thumbnailUrl.isNotEmpty()) {
+                                    Image(
+                                        painter = rememberImagePainter(it.videoThumbnailUrls[thumbnailUrl]),
+                                        contentDescription = "Video Thumbnail",
+                                        modifier = Modifier
+                                            .size(120.dp)
+                                            .border(1.dp, Color.Gray)
+                                            .clickable {
+                                                Log.d("MyProfileScreen", "Navigate to Home Screen")
+                                                navControlMulti.navigate("$HOME_SCREEN_ROUTE/${it.id}/$thumbnailUrl")
+                                            }
+                                    )
                                 }
                             }
                         } else {
@@ -203,10 +214,4 @@ fun UserProfileScreen(viewModel: UserViewModel = viewModel(), navController: Nav
             }
         }
     )
-}
-
-@Preview
-@Composable
-fun UserProfileScreenPreview() {
-    UserProfileScreen(navController = NavHostController(LocalContext.current))
 }

@@ -5,41 +5,27 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.ModalBottomSheetDefaults
-
-import androidx.compose.material.ModalBottomSheetValue
-import androidx.compose.material.rememberModalBottomSheetState
-
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.contentColorFor
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.google.accompanist.navigation.material.BottomSheetNavigator
-import com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi
-
-import com.google.accompanist.navigation.material.ModalBottomSheetLayout
-
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.mck.core.DestinationRoute
 import com.mck.theme.TikTokTheme
 import com.mck.taktak.component.BottomBar
 import com.mck.taktak.navigation.AppNavHost
+import kotlinx.coroutines.launch
 
-
-@OptIn(ExperimentalMaterialApi::class, ExperimentalMaterialNavigationApi::class)
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun RootScreen() {
-    val bottomSheetNavigator = rememberBottomSheetNavigator()
-    val navController = rememberNavController(bottomSheetNavigator)
-    val currentBackStackEntry = navController.currentBackStackEntryAsState().value
+    val navController = rememberNavController()
+    val currentBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = currentBackStackEntry?.destination
     val context = LocalContext.current
 
@@ -69,38 +55,48 @@ fun RootScreen() {
         }
     }
 
-    // Applying theme and system UI changes
-    TikTokTheme(darkTheme = true) {
-        SetupSystemUi(rememberSystemUiController(), MaterialTheme.colorScheme.background)
+    // Modal Bottom Sheet state
+    val sheetState = rememberModalBottomSheetState(initialValue = ModalBottomSheetValue.Hidden)
+    val coroutineScope = rememberCoroutineScope()
 
-        // Using ModalBottomSheetLayout for bottom sheet navigation
-//        ModalBottomSheetLayout(
-//            sheetShape = MaterialTheme.shapes.large,
-//            sheetElevation = ModalBottomSheetDefaults.Elevation,
-//            sheetBackgroundColor = MaterialTheme.colorScheme.surface,
-//            sheetContentColor = contentColorFor(MaterialTheme.colorScheme.surface),
-//            scrimColor = ModalBottomSheetDefaults.scrimColor,
-//            bottomSheetNavigator = bottomSheetNavigator,
-//        ) {
+    // Applying theme and system UI changes
+    TikTokTheme(darkTheme = false) {
+        SetupSystemUi(rememberSystemUiController(), MaterialTheme.colors.background)
+        ModalBottomSheetLayout(
+            sheetState = sheetState,
+            sheetContent = {
+                // Define the content of your bottom sheet here
+//                BottomSheetContent()
+            },
+            sheetShape = MaterialTheme.shapes.large,
+            scrimColor = ModalBottomSheetDefaults.scrimColor
+        ) {
             Scaffold(
                 bottomBar = {
                     if (isShowBottomBar) {
-                        BottomBar(navController, currentDestination, isDarkTheme = darkMode)
+                        BottomBar(navController, currentDestination, isDarkTheme = false)
                     }
                 }
-            ) {
+            ) { paddingValues ->
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(it)
+                        .padding(paddingValues)
                 ) {
-                    AppNavHost(navController = navController)
+                    AppNavHost(
+                        navController = navController,
+//                        onShowBottomSheet = {
+//                            coroutineScope.launch { sheetState.show() }
+//                        },
+//                        onHideBottomSheet = {
+//                            coroutineScope.launch { sheetState.hide() }
+//                        }
+                    )
                 }
             }
-//        }
+        }
     }
 }
-
 
 @Composable
 fun SetupSystemUi(systemUiController: SystemUiController, systemBarColor: Color) {
@@ -109,11 +105,10 @@ fun SetupSystemUi(systemUiController: SystemUiController, systemBarColor: Color)
     }
 }
 
-@OptIn(ExperimentalMaterialApi::class, ExperimentalMaterialNavigationApi::class)
-@Composable
-fun rememberBottomSheetNavigator(): BottomSheetNavigator {
-    val sheetState = rememberModalBottomSheetState(ModalBottomSheetValue.Hidden)
-    return remember(sheetState) {
-        BottomSheetNavigator(sheetState = sheetState)
-    }
-}
+//@Composable
+//fun BottomSheetContent() {
+//    // Example content for the bottom sheet
+//    Column(modifier = Modifier.padding(16.dp)) {
+//        Text(text = "This is the bottom sheet content", style = MaterialTheme.typography.body1)
+//    }
+//}

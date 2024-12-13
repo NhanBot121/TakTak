@@ -2,6 +2,7 @@ package com.mck.myprofile
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
@@ -19,24 +20,5 @@ fun NavGraphBuilder.myProfileNavGraph(navController: NavController) {
         MyProfileScreen(navController)
     }
 
-    composable(route = "$CREATOR_PROFILE_ROUTE/{$USER_ID}",
-        arguments = listOf(
-            navArgument(USER_ID) { type = NavType.LongType }
-        )
-    ) {
-        MyProfileScreen(
-            //onClickNavIcon = { navController.navigateUp() },
-            navController = navController
-        )
-    }
-
-    composable(route = FORMATTED_COMPLETE_CREATOR_VIDEO_ROUTE,
-        arguments = listOf(
-            navArgument(USER_ID) { type = NavType.LongType },
-            navArgument(VIDEO_INDEX) { type = NavType.IntType }
-        )
-    ) {
-
-    }
 
 }

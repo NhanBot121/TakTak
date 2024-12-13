@@ -1,7 +1,6 @@
 package com.mck.data.model
 
 import android.util.Log
-import com.mck.data.model.VideoDetails
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
 
@@ -23,15 +22,19 @@ class VideoRepository {
                     .get()
                     .await()
                 val comments = commentsSnapshot.mapNotNull { it.toObject(Comment::class.java) }
+                val doc = firestore.collection("users").document(video.userId).get().await()
+                val author = doc.toObject(User::class.java)
 
-                val updatedVideo = it.copy(
-                    comments = comments
-                )
-                Log.d("VideoRepository", "Comments: ${updatedVideo.comments}")
-                videoList.add(updatedVideo)
+                val updatedVideo = author?.let { author ->
+                    it.copy(
+                        author = author, comments = comments
+                    )
+                }
+
+                if (updatedVideo != null) {
+                    videoList.add(updatedVideo)
+                }
             }
-
-
         }
         return videoList
     }
@@ -40,5 +43,7 @@ class VideoRepository {
     suspend fun updateLike(like: Int, videoId: Int, user: String){
         val videoRef = firestore.collection(user).document("video$videoId")
         videoRef.update("like", like).await()
+        val videoRefGlob = firestore.collection("video").document("video$videoId")
+        videoRefGlob.update("like", like).await()
     }
 }

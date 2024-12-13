@@ -1,4 +1,4 @@
-package com.example.home
+package com.mck.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

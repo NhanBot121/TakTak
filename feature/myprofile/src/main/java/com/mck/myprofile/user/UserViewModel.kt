@@ -1,5 +1,9 @@
 package com.mck.myprofile.user
 
+import android.annotation.SuppressLint
+import android.content.Context
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mck.myprofile.user.data.UserRepository
@@ -8,17 +12,23 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
-class UserViewModel : ViewModel() {
+class UserViewModel(private val _userRepository: UserRepository) : ViewModel() {
 
-    private val userRepository = UserRepository()
     private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+
+    private val _isLoggedIn = MutableLiveData<Boolean>(false)
+        val isLoggedIn: LiveData<Boolean> get() = _isLoggedIn
+
+    init {
+        _isLoggedIn.value = _userRepository.isUserLoggedin()
+    }
 
     // Đăng ký người dùng
     fun registerUser(email: String, password: String, onResult: (Boolean, String) -> Unit) {
         viewModelScope.launch {
             try {
-                val success = userRepository.registerUser(email, password)
+                val success = _userRepository.registerUser(email, password)
                 if (success) {
                     onResult(true, "Registration successful")
                 } else {
@@ -34,8 +44,10 @@ class UserViewModel : ViewModel() {
     fun loginUser(email: String, password: String, onResult: (Boolean, String) -> Unit) {
         viewModelScope.launch {
             try {
-                val success = userRepository.loginUser(email, password)
+                val success = _userRepository.loginUser(email, password)
                 if (success) {
+                    _isLoggedIn.postValue(true)
+                    _userRepository.saveLoginStatus(true)
                     onResult(true, "Login successful")
                 } else {
                     onResult(false, "Login failed")
@@ -52,7 +64,7 @@ class UserViewModel : ViewModel() {
         if (userId != null) {
             viewModelScope.launch {
                 try {
-                    val user = userRepository.getUserFromFirestore(userId)
+                    val user = _userRepository.getUserFromFirestore(userId)
                     onResult(user)
                 } catch (e: Exception) {
                     onResult(null)
@@ -114,6 +126,8 @@ class UserViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 firebaseAuth.signOut()
+                _isLoggedIn.postValue(false)
+                _userRepository.saveLoginStatus(false)
             } catch (e: Exception) {
                 println("Logout Error: ${e.message}")
             }
