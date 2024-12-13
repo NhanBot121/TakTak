@@ -43,5 +43,7 @@ class VideoRepository {
     suspend fun updateLike(like: Int, videoId: Int, user: String){
         val videoRef = firestore.collection(user).document("video$videoId")
         videoRef.update("like", like).await()
+        val videoRefGlob = firestore.collection("video").document("video$videoId")
+        videoRefGlob.update("like", like).await()
     }
 }
