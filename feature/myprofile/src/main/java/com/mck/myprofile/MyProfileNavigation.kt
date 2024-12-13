@@ -13,7 +13,7 @@ import com.mck.core.DestinationRoute.MY_PROFILE_ROUTE
 import com.mck.core.DestinationRoute.PassedKey.USER_ID
 import com.mck.core.DestinationRoute.PassedKey.VIDEO_INDEX
 
-fun NavGraphBuilder.myProfileNavGraph(navController: NavController) {
+fun NavGraphBuilder.myProfileNavGraph(navController: NavHostController) {
 
 
     composable(route = MY_PROFILE_ROUTE) {
